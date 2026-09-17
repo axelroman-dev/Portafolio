@@ -17,16 +17,10 @@
         "tagline": {
             "es": "Contruyo cada proyecto como mi meta personal",
             "en": "I build every project as a personal goal"
-        },
-        "available": {
-            "es": "Disponible para proyectos",
-            "en": "Available for projects"
         }
     },
     "stats": {
-        "years": 5,
-        "projects": "03",
-        "languages": "05"
+        "years": 5
     },
     "about": {
         "kicker": {
@@ -73,7 +67,7 @@
         {
             "id": "languages",
             "title": { "es": "Lenguajes", "en": "Languages" },
-            "items": ["Java", "C#", "Python", "JavaScript"]
+            "items": ["JavaScript", "Java", "C#", "Dart"]
         },
         {
             "id": "frontend",
@@ -115,7 +109,8 @@
                     "es": "Extension para navegadores chromium y una imagen de docker para levantar un servidor para la extension que es self-hosted.",
                     "en": "Extension for chromium browsers plus a docker image that spins up the self-hosted server the extension talks to."
                 },
-                "stack": "JavaScript · Docker · Linux"
+                "repo": "https://github.com/axelroman-dev/BrowserSync",
+                "url": null
             },
             {
                 "id": "clinicadual",
@@ -130,7 +125,8 @@
                     "es": "Aplicacion de escritorio en csharp para el manejo de citas de pacientes, pagos, reportes.",
                     "en": "Desktop application in C# for managing patient appointments, payments and reports."
                 },
-                "stack": "C# · MySQL · Windows"
+                "repo": null,
+                "url": null
             },
             {
                 "id": "homelab",
@@ -145,7 +141,8 @@
                     "es": "Administracion de servidor personal (practica de manejo de servidores linux).",
                     "en": "Personal server administration — hands-on practice running Linux servers."
                 },
-                "stack": "Ubuntu Server · Docker · Windows Server"
+                "repo": null,
+                "url": null
             }
         ]
     },
@@ -193,10 +190,9 @@
             "en": "Let's talk about your project"
         },
         "body": {
-            "es": "Cuéntame qué necesitas construir. Respondo en menos de 24 horas.",
-            "en": "Tell me what you need to build. I reply within 24 hours."
-        },
-        "email": "tu@correo.com"
+            "es": "Cuéntame qué necesitas construir. Responderé lo antes posible.",
+            "en": "Tell me what you need to build. I reply as soon as possible."
+        }
     },
     "footer": {
         "tagline": {
@@ -209,8 +205,6 @@
         "en": { "projects": "Work", "stack": "Stack", "contact": "Contact" }
     },
     "ui": {
-        "open": { "es": "Ver detalle", "en": "View detail" },
-        "close": { "es": "Cerrar detalle", "en": "Close detail" },
         "all": { "es": "Todo", "en": "All" },
         "ctaWork": { "es": "Ver proyectos", "en": "See projects" },
         "ctaHire": { "es": "Contactarme", "en": "Get in touch" },
@@ -220,16 +214,8 @@
         "expColYear": { "es": "Periodo", "en": "Period" },
         "expColRole": { "es": "Rol", "en": "Role" },
         "expColWhere": { "es": "Lugar", "en": "Place" },
-        "dRole": { "es": "Rol", "en": "Role" },
-        "dStack": { "es": "Stack", "en": "Stack" },
-        "dType": { "es": "Tipo", "en": "Type" },
-        "dState": { "es": "Estado", "en": "Status" },
-        "owner": {
-            "es": "Diseño, desarrollo y despliegue",
-            "en": "Design, development and deployment"
-        },
-        "personal": { "es": "Proyecto personal", "en": "Personal project" },
-        "active": { "es": "Activo", "en": "Active" },
+        "repo": { "es": "Repositorio", "en": "Repository" },
+        "web": { "es": "Ver sitio", "en": "Visit site" },
         "fName": { "es": "Nombre", "en": "Name" },
         "fNamePh": { "es": "Tu nombre", "en": "Your name" },
         "fEmail": { "es": "Email", "en": "Email" },

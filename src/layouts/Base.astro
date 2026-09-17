@@ -1,42 +1,45 @@
 ---
-import '../styles/global.css';
+import "../styles/global.css";
 
 interface Props {
-  title?: string;
-  description?: string;
+    title?: string;
+    description?: string;
 }
 
-const { title = 'Axel Roman · Ingeniero en Sistemas y Desarrollador FullStack', description = 'Portafolio de Axel Roman — Ingeniero en Sistemas y Desarrollador FullStack.' } = Astro.props;
+const {
+    title = "Axel Roman · Ingeniero en Sistemas y Desarrollador FullStack",
+    description = "Portafolio de Axel Roman — Ingeniero en Sistemas y Desarrollador FullStack.",
+} = Astro.props;
 ---
 
 <!doctype html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content={description} />
-    <meta name="generator" content={Astro.generator} />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <title>{title}</title>
-    <script is:inline>
-      // Apply persisted theme before paint to avoid flash.
-      (function () {
-        try {
-          var t = localStorage.getItem('theme');
-          if (t === 'dark' || t === 'light') {
-            document.documentElement.setAttribute('data-theme', t);
-          }
-        } catch (e) {}
-      })();
-    </script>
-  </head>
-  <body>
-    <slot />
-    <script>
-      import { initPortfolio } from '../scripts/portfolio';
-      initPortfolio();
-    </script>
-  </body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content={description} />
+        <meta name="generator" content={Astro.generator} />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <title>{title}</title>
+        <script is:inline>
+            // Apply persisted theme before paint to avoid flash.
+            (function () {
+                try {
+                    var t = localStorage.getItem("theme");
+                    if (t === "dark" || t === "light") {
+                        document.documentElement.setAttribute("data-theme", t);
+                    }
+                } catch (e) {}
+            })();
+        </script>
+    </head>
+    <body>
+        <slot />
+        <script>
+            import { initPortfolio } from "../scripts/portfolio";
+            initPortfolio();
+        </script>
+    </body>
 </html>

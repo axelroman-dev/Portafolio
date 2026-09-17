@@ -1,13 +1,19 @@
 ---
-import type { Portfolio } from '../lib/types';
-interface Props { data: Portfolio; }
+import type { Portfolio } from "../lib/types";
+interface Props {
+    data: Portfolio;
+}
 const { data } = Astro.props;
 const f = data.footer;
 ---
 
 <footer class="footer">
-  <div class="footer-inner">
-    <span class="copy">© {data.site.year} {data.site.owner}</span>
-    <span data-i18n="footer.tagline" data-i18n-es={f.tagline.es} data-i18n-en={f.tagline.en}>{f.tagline.es}</span>
-  </div>
+    <div class="footer-inner">
+        <span class="copy">
+            © {data.site.year} {data.site.owner}
+        </span>
+        <span data-i18n="footer.tagline" data-i18n-es={f.tagline.es} data-i18n-en={f.tagline.en}>
+            {f.tagline.es}
+        </span>
+    </div>
 </footer>

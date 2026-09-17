@@ -97,6 +97,22 @@
         "filters": ["all", "JavaScript", "C#", "Docker", "Linux"],
         "items": [
             {
+                "id": "homelab",
+                "initials": "HL",
+                "name": "Homelab",
+                "category": {
+                    "es": "Infraestructura · Linux",
+                    "en": "Infrastructure · Linux"
+                },
+                "tags": ["Linux", "Ubuntu Server", "Docker"],
+                "desc": {
+                    "es": "Administracion de servidor personal (practica de manejo de servidores linux).",
+                    "en": "Personal server administration — hands-on practice running Linux servers."
+                },
+                "repo": "https://github.com/axelroman-dev/homelab-stacks",
+                "url": null
+            },
+            {
                 "id": "browsersync",
                 "initials": "BS",
                 "name": "BrowserSync",
@@ -110,7 +126,7 @@
                     "en": "Extension for chromium browsers plus a docker image that spins up the self-hosted server the extension talks to."
                 },
                 "repo": "https://github.com/axelroman-dev/BrowserSync",
-                "url": null
+                "url": "https://browsersync.axelroman.dev/"
             },
             {
                 "id": "clinicadual",
@@ -124,22 +140,6 @@
                 "desc": {
                     "es": "Aplicacion de escritorio en csharp para el manejo de citas de pacientes, pagos, reportes.",
                     "en": "Desktop application in C# for managing patient appointments, payments and reports."
-                },
-                "repo": null,
-                "url": null
-            },
-            {
-                "id": "homelab",
-                "initials": "HL",
-                "name": "Homelab",
-                "category": {
-                    "es": "Infraestructura · Linux",
-                    "en": "Infrastructure · Linux"
-                },
-                "tags": ["Linux", "Ubuntu Server", "Docker"],
-                "desc": {
-                    "es": "Administracion de servidor personal (practica de manejo de servidores linux).",
-                    "en": "Personal server administration — hands-on practice running Linux servers."
                 },
                 "repo": null,
                 "url": null

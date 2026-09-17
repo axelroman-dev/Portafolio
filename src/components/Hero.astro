@@ -1,0 +1,75 @@
+---
+import type { Portfolio } from "../lib/types";
+interface Props {
+    data: Portfolio;
+}
+const { data } = Astro.props;
+const p = data.profile;
+const ui = data.ui;
+---
+
+<section class="hero" id="top" aria-label="Hero">
+    <div class="hero-main">
+        <div
+            class="kicker"
+            data-i18n="profile.kicker"
+            data-i18n-es={p.kicker.es}
+            data-i18n-en={p.kicker.en}
+        >
+            {p.kicker.es}
+        </div>
+        <h1 class="hero-name">{p.title}</h1>
+        <div class="divider-2"></div>
+        <div
+            class="hero-role"
+            data-i18n="profile.role"
+            data-i18n-es={p.role.es}
+            data-i18n-en={p.role.en}
+        >
+            {p.role.es}
+        </div>
+        <p
+            class="hero-tagline"
+            data-i18n="profile.tagline"
+            data-i18n-es={p.tagline.es}
+            data-i18n-en={p.tagline.en}
+        >
+            {p.tagline.es}
+        </p>
+        <div class="hero-ctas">
+            <a
+                href="#proyectos"
+                class="btn btn-primary"
+                data-i18n="ui.ctaWork"
+                data-i18n-es={ui.ctaWork.es}
+                data-i18n-en={ui.ctaWork.en}
+            >
+                {ui.ctaWork.es}
+            </a>
+            <a
+                href="#contacto"
+                class="btn btn-secondary"
+                data-i18n="ui.ctaHire"
+                data-i18n-es={ui.ctaHire.es}
+                data-i18n-en={ui.ctaHire.en}
+            >
+                {ui.ctaHire.es}
+            </a>
+        </div>
+    </div>
+    <div class="hero-side">
+        <div class="hero-photo grayscale">
+            <span>Foto de perfil</span>
+        </div>
+        <div class="hero-available">
+            <span class="pulse"></span>
+            <span
+                data-i18n="profile.available"
+                data-i18n-es={p.available.es}
+                data-i18n-en={p.available.en}
+            >
+                {p.available.es}
+            </span>
+        </div>
+    </div>
+</section>

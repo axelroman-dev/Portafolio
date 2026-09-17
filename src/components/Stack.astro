@@ -1,0 +1,20 @@
+---
+import type { Portfolio } from '../lib/types';
+interface Props { data: Portfolio; }
+const { data } = Astro.props;
+---
+
+<section id="stack" class="section" aria-label="Stack">
+  <div class="stack-grid">
+    {data.stack.map((g) => (
+      <div class="stack-cell">
+        <div class="stack-title" data-i18n={`stack.${g.id}`} data-i18n-es={g.title.es} data-i18n-en={g.title.en}>{g.title.es}</div>
+        <div class="stack-items">
+          {g.items.map((item) => (
+            <span class="stack-chip">{item}</span>
+          ))}
+        </div>
+      </div>
+    ))}
+  </div>
+</section>

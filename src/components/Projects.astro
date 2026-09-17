@@ -1,0 +1,76 @@
+---
+import type { Portfolio } from '../lib/types';
+interface Props { data: Portfolio; }
+const { data } = Astro.props;
+const proj = data.projects;
+const ui = data.ui;
+---
+
+<section id="proyectos" aria-label="Proyectos">
+  <div class="projects-header">
+    <div class="projects-header-meta">
+      <div class="kicker" data-i18n="projects.kicker" data-i18n-es={proj.kicker.es} data-i18n-en={proj.kicker.en}>{proj.kicker.es}</div>
+      <h2 class="projects-title" data-i18n="projects.title" data-i18n-es={proj.title.es} data-i18n-en={proj.title.en}>{proj.title.es}</h2>
+    </div>
+    <div class="filters" role="group" aria-label="Filtros por tecnología">
+      {proj.filters.map((f, i) => (
+        <button
+          type="button"
+          class={`filter-btn${i === 0 ? ' active' : ''}`}
+          data-filter={f}
+          aria-pressed={i === 0 ? 'true' : 'false'}
+        >{f === 'all' ? ui.all.es : f}</button>
+      ))}
+    </div>
+  </div>
+
+  <div class="projects-grid">
+    {proj.items.map((p) => (
+      <article class="project-card" data-project data-id={p.id} data-tags={p.tags.join('|')} data-stack={p.stack}>
+        <div class="project-head">
+          <div class="project-initials">{p.initials}</div>
+          <div class="project-meta">
+            <div class="project-name">{p.name}</div>
+            <div class="project-category" data-i18n={`project.${p.id}.category`} data-i18n-es={p.category.es} data-i18n-en={p.category.en}>{p.category.es}</div>
+            <div class="project-tags">
+              {p.tags.map((tag) => (
+                <span class="project-tag">{tag}</span>
+              ))}
+            </div>
+          </div>
+        </div>
+        <p class="project-desc" data-i18n={`project.${p.id}.desc`} data-i18n-es={p.desc.es} data-i18n-en={p.desc.en}>{p.desc.es}</p>
+        <div class="project-detail" style="display: none;">
+          <div class="project-detail-line"></div>
+          <div class="project-detail-row">
+            <span class="k" data-i18n="ui.dStack" data-i18n-es={ui.dStack.es} data-i18n-en={ui.dStack.en}>{ui.dStack.es}</span>
+            <span class="v">{p.stack}</span>
+          </div>
+          <div class="project-detail-row">
+            <span class="k" data-i18n="ui.dRole" data-i18n-es={ui.dRole.es} data-i18n-en={ui.dRole.en}>{ui.dRole.es}</span>
+            <span class="v" data-i18n={`project.${p.id}.owner`} data-i18n-es={ui.owner.es} data-i18n-en={ui.owner.en}>{ui.owner.es}</span>
+          </div>
+          <div class="project-detail-row">
+            <span class="k" data-i18n="ui.dType" data-i18n-es={ui.dType.es} data-i18n-en={ui.dType.en}>{ui.dType.es}</span>
+            <span class="v" data-i18n={`project.${p.id}.type`} data-i18n-es={ui.personal.es} data-i18n-en={ui.personal.en}>{ui.personal.es}</span>
+          </div>
+          <div class="project-detail-row">
+            <span class="k" data-i18n="ui.dState" data-i18n-es={ui.dState.es} data-i18n-en={ui.dState.en}>{ui.dState.es}</span>
+            <span class="v" data-i18n={`project.${p.id}.state`} data-i18n-es={ui.active.es} data-i18n-en={ui.active.en}>{ui.active.es}</span>
+          </div>
+        </div>
+        <button type="button" class="project-toggle" data-action="toggle-project">
+          <span
+            class="toggle-label"
+            data-i18n-open-es={ui.open.es}
+            data-i18n-open-en={ui.open.en}
+            data-i18n-close-es={ui.close.es}
+            data-i18n-close-en={ui.close.en}
+          >{ui.open.es}</span>
+          <span class="toggle-glyph">+</span>
+        </button>
+      </article>
+    ))}
+    <div class="empty projects-empty" style="display: none;" data-i18n="empty" data-i18n-es="Sin proyectos para este filtro." data-i18n-en="No projects for this filter.">Sin proyectos para este filtro.</div>
+  </div>
+</section>

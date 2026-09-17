@@ -1,0 +1,30 @@
+---
+import type { Portfolio } from '../lib/types';
+interface Props { data: Portfolio; }
+const { data } = Astro.props;
+const e = data.experience;
+const ui = data.ui;
+---
+
+<section class="exp" aria-label="Experiencia">
+  <div class="kicker" data-i18n="experience.kicker" data-i18n-es={e.kicker.es} data-i18n-en={e.kicker.en}>{e.kicker.es}</div>
+  <h2 class="exp-title" data-i18n="experience.title" data-i18n-es={e.title.es} data-i18n-en={e.title.en}>{e.title.es}</h2>
+  <table class="exp-table">
+    <thead>
+      <tr>
+        <th style="width: 22%;" data-i18n="ui.expColYear" data-i18n-es={ui.expColYear.es} data-i18n-en={ui.expColYear.en}>{ui.expColYear.es}</th>
+        <th style="width: 34%;" data-i18n="ui.expColRole" data-i18n-es={ui.expColRole.es} data-i18n-en={ui.expColRole.en}>{ui.expColRole.es}</th>
+        <th data-i18n="ui.expColWhere" data-i18n-es={ui.expColWhere.es} data-i18n-en={ui.expColWhere.en}>{ui.expColWhere.es}</th>
+      </tr>
+    </thead>
+    <tbody>
+      {e.items.map((row, idx) => (
+        <tr>
+          <td>{row.year}</td>
+          <td data-i18n={`experience.${idx}.role`} data-i18n-es={row.role.es} data-i18n-en={row.role.en}>{row.role.es}</td>
+          <td data-i18n={`experience.${idx}.where`} data-i18n-es={row.where.es} data-i18n-en={row.where.en}>{row.where.es}</td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</section>

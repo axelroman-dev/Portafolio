@@ -1,0 +1,29 @@
+---
+import Base from "../layouts/Base.astro";
+import Hero from "../components/Hero.astro";
+import Stats from "../components/Stats.astro";
+import About from "../components/About.astro";
+import Stack from "../components/Stack.astro";
+import Projects from "../components/Projects.astro";
+import Experience from "../components/Experience.astro";
+import Contact from "../components/Contact.astro";
+import Footer from "../components/Footer.astro";
+import Tweaks from "../components/Tweaks.astro";
+import { getPortfolio } from "../lib/portfolio";
+
+const data = getPortfolio();
+---
+
+<Base>
+    <main class="container">
+        <Hero data={data} />
+        <Stats data={data} />
+        <About data={data} />
+        <Stack data={data} />
+        <Projects data={data} />
+        <Experience data={data} />
+        <!-- <Contact data={data} /> -->
+    </main>
+    <Footer data={data} />
+    <Tweaks />
+</Base>

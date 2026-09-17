@@ -1,0 +1,22 @@
+---
+import type { Portfolio } from '../lib/types';
+interface Props { data: Portfolio; }
+const { data } = Astro.props;
+const s = data.stats;
+const ui = data.ui;
+---
+
+<div class="row stats" role="list">
+  <div class="stat" role="listitem">
+    <div class="stat-value">{s.years}+</div>
+    <div class="stat-label" data-i18n="ui.statYears" data-i18n-es={ui.statYears.es} data-i18n-en={ui.statYears.en}>{ui.statYears.es}</div>
+  </div>
+  <div class="stat" role="listitem">
+    <div class="stat-value">{s.projects}</div>
+    <div class="stat-label" data-i18n="ui.statProjects" data-i18n-es={ui.statProjects.es} data-i18n-en={ui.statProjects.en}>{ui.statProjects.es}</div>
+  </div>
+  <div class="stat" role="listitem">
+    <div class="stat-value">{s.languages}</div>
+    <div class="stat-label" data-i18n="ui.statLangs" data-i18n-es={ui.statLangs.es} data-i18n-en={ui.statLangs.en}>{ui.statLangs.es}</div>
+  </div>
+</div>

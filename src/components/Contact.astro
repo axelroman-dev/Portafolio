@@ -1,0 +1,48 @@
+---
+import type { Portfolio } from '../lib/types';
+interface Props { data: Portfolio; }
+const { data } = Astro.props;
+const c = data.contact;
+const ui = data.ui;
+---
+
+<section id="contacto" class="contact" aria-label="Contacto">
+  <div class="contact-info">
+    <div class="kicker" data-i18n="contact.kicker" data-i18n-es={c.kicker.es} data-i18n-en={c.kicker.en}>{c.kicker.es}</div>
+    <h2 class="contact-title" data-i18n="contact.title" data-i18n-es={c.title.es} data-i18n-en={c.title.en}>{c.title.es}</h2>
+    <p class="contact-body" data-i18n="contact.body" data-i18n-es={c.body.es} data-i18n-en={c.body.en}>{c.body.es}</p>
+    <a class="contact-email" href={`mailto:${c.email}`}>{c.email}</a>
+  </div>
+  <div class="contact-form">
+    <form data-contact-form novalidate>
+      <div class="form-row">
+        <div class="field">
+          <label for="f-nombre" data-i18n="ui.fName" data-i18n-es={ui.fName.es} data-i18n-en={ui.fName.en}>{ui.fName.es}</label>
+          <input id="f-nombre" class="input" type="text" required placeholder={ui.fNamePh.es} data-i18n-placeholder="ui.fNamePh" data-i18n-placeholder-es={ui.fNamePh.es} data-i18n-placeholder-en={ui.fNamePh.en} />
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="field">
+          <label for="f-email" data-i18n="ui.fEmail" data-i18n-es={ui.fEmail.es} data-i18n-en={ui.fEmail.en}>{ui.fEmail.es}</label>
+          <input id="f-email" class="input" type="email" required placeholder={ui.fEmailPh.es} data-i18n-placeholder="ui.fEmailPh" data-i18n-placeholder-es={ui.fEmailPh.es} data-i18n-placeholder-en={ui.fEmailPh.en} />
+        </div>
+      </div>
+      <div class="form-full">
+        <div class="field">
+          <label for="f-asunto" data-i18n="ui.fSubject" data-i18n-es={ui.fSubject.es} data-i18n-en={ui.fSubject.en}>{ui.fSubject.es}</label>
+          <input id="f-asunto" class="input" type="text" placeholder={ui.fSubjectPh.es} data-i18n-placeholder="ui.fSubjectPh" data-i18n-placeholder-es={ui.fSubjectPh.es} data-i18n-placeholder-en={ui.fSubjectPh.en} />
+        </div>
+      </div>
+      <div class="form-full">
+        <div class="field">
+          <label for="f-mensaje" data-i18n="ui.fMessage" data-i18n-es={ui.fMessage.es} data-i18n-en={ui.fMessage.en}>{ui.fMessage.es}</label>
+          <textarea id="f-mensaje" class="input" required placeholder={ui.fMessagePh.es} data-i18n-placeholder="ui.fMessagePh" data-i18n-placeholder-es={ui.fMessagePh.es} data-i18n-placeholder-en={ui.fMessagePh.en}></textarea>
+        </div>
+      </div>
+      <div class="form-actions">
+        <button type="submit" class="btn btn-primary" style="padding: 11px 20px;" data-i18n="ui.fSend" data-i18n-es={ui.fSend.es} data-i18n-en={ui.fSend.en}>{ui.fSend.es}</button>
+        <span class="sent-msg" data-sent style="display: none;" data-i18n-sent-es={ui.sent.es} data-i18n-sent-en={ui.sent.en}>{ui.sent.es}</span>
+      </div>
+    </form>
+  </div>
+</section>

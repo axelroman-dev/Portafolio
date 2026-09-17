@@ -117,7 +117,9 @@ export type UiKey =
     | "fMessage"
     | "fMessagePh"
     | "fSend"
-    | "sent";
+    | "sent"
+    | "sending"
+    | "error";
 
 export type Ui = Record<UiKey, Localized>;
 

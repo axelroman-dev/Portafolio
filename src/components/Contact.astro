@@ -37,6 +37,14 @@ const ui = data.ui;
     </div>
     <div class="contact-form">
         <form data-contact-form novalidate>
+            <input
+                type="checkbox"
+                name="botcheck"
+                class="hp"
+                tabindex="-1"
+                autocomplete="off"
+                aria-hidden="true"
+            />
             <div class="form-row">
                 <div class="field">
                     <label
@@ -49,6 +57,7 @@ const ui = data.ui;
                     </label>
                     <input
                         id="f-nombre"
+                        name="name"
                         class="input"
                         type="text"
                         required
@@ -71,6 +80,7 @@ const ui = data.ui;
                     </label>
                     <input
                         id="f-email"
+                        name="email"
                         class="input"
                         type="email"
                         required
@@ -93,6 +103,7 @@ const ui = data.ui;
                     </label>
                     <input
                         id="f-asunto"
+                        name="subject"
                         class="input"
                         type="text"
                         placeholder={ui.fSubjectPh.es}
@@ -114,6 +125,7 @@ const ui = data.ui;
                     </label>
                     <textarea
                         id="f-mensaje"
+                        name="message"
                         class="input"
                         required
                         placeholder={ui.fMessagePh.es}
@@ -131,17 +143,28 @@ const ui = data.ui;
                     data-i18n="ui.fSend"
                     data-i18n-es={ui.fSend.es}
                     data-i18n-en={ui.fSend.en}
+                    data-i18n-sending-es={ui.sending.es}
+                    data-i18n-sending-en={ui.sending.en}
                 >
                     {ui.fSend.es}
                 </button>
                 <span
-                    class="sent-msg"
+                    class="form-status sent-msg"
                     data-sent
                     style="display: none;"
                     data-i18n-sent-es={ui.sent.es}
                     data-i18n-sent-en={ui.sent.en}
                 >
                     {ui.sent.es}
+                </span>
+                <span
+                    class="form-status form-error"
+                    data-error
+                    style="display: none;"
+                    data-i18n-error-es={ui.error.es}
+                    data-i18n-error-en={ui.error.en}
+                >
+                    {ui.error.es}
                 </span>
             </div>
         </form>

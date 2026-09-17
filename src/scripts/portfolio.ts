@@ -113,18 +113,73 @@ function setupFilters() {
 function setupContactForm() {
     const form = $("[data-contact-form]") as HTMLFormElement | null;
     const sent = $("[data-sent]") as HTMLElement | null;
-    if (!form || !sent) return;
-    form.addEventListener("submit", (event) => {
+    const errorEl = $("[data-error]") as HTMLElement | null;
+    const submit = form?.querySelector('button[type="submit"]') as HTMLButtonElement | null;
+    if (!form || !sent || !errorEl || !submit) return;
+
+    const accessKey =
+        import.meta.env.PUBLIC_WEB3FORMS_KEY ?? "replace-with-your-web3forms-access-key";
+
+    const setStatus = (el: HTMLElement, key: "sent" | "error") => {
+        const lang = getLang();
+        const value = el.getAttribute(`data-i18n-${key}-${lang}`);
+        if (value !== null) el.textContent = value;
+        el.style.display = "";
+    };
+
+    const setSendingLabel = () => {
+        const lang = getLang();
+        submit.textContent =
+            submit.getAttribute(`data-i18n-sending-${lang}`) ?? submit.textContent ?? "";
+    };
+
+    const restoreLabel = () => {
+        const lang = getLang();
+        const value = submit.getAttribute(`data-i18n-${lang}`);
+        if (value !== null) submit.textContent = value;
+    };
+
+    form.addEventListener("submit", async (event) => {
         event.preventDefault();
         if (!form.checkValidity()) {
             form.reportValidity();
             return;
         }
-        // TODO: conectar a Formspree / Resend / API
-        const lang = getLang();
-        sent.textContent = sent.getAttribute(`data-i18n-sent-${lang}`) || "";
-        sent.style.display = "";
-        form.reset();
+        sent.style.display = "none";
+        errorEl.style.display = "none";
+        submit.disabled = true;
+        setSendingLabel();
+
+        try {
+            const payload = Object.fromEntries(new FormData(form));
+            const body = JSON.stringify({
+                access_key: accessKey,
+                subject: `Nuevo mensaje de ${String(payload.name ?? "")}`,
+                from_name: "Portafolio Web",
+                ...payload,
+            });
+
+            const response = await fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    Accept: "application/json",
+                },
+                body,
+            });
+            const data = (await response.json()) as { success?: boolean };
+            if (data.success) {
+                setStatus(sent, "sent");
+                form.reset();
+            } else {
+                setStatus(errorEl, "error");
+            }
+        } catch {
+            setStatus(errorEl, "error");
+        } finally {
+            submit.disabled = false;
+            restoreLabel();
+        }
     });
 }
 

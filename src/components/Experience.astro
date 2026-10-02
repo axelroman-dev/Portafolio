@@ -5,7 +5,6 @@ interface Props {
 }
 const { data } = Astro.props;
 const e = data.experience;
-const ui = data.ui;
 ---
 
 <section class="exp" aria-label="Experiencia">
@@ -25,54 +24,66 @@ const ui = data.ui;
     >
         {e.title.es}
     </h2>
-    <table class="exp-table">
-        <thead>
-            <tr>
-                <th
-                    style="width: 22%;"
-                    data-i18n="ui.expColYear"
-                    data-i18n-es={ui.expColYear.es}
-                    data-i18n-en={ui.expColYear.en}
+    <ol class="exp-list">
+        {e.items.map((row, idx) => (
+            <li class="exp-item">
+                <div
+                    class="exp-year"
+                    data-i18n={`experience.${idx}.year`}
+                    data-i18n-es={row.year.es}
+                    data-i18n-en={row.year.en}
                 >
-                    {ui.expColYear.es}
-                </th>
-                <th
-                    style="width: 34%;"
-                    data-i18n="ui.expColRole"
-                    data-i18n-es={ui.expColRole.es}
-                    data-i18n-en={ui.expColRole.en}
-                >
-                    {ui.expColRole.es}
-                </th>
-                <th
-                    data-i18n="ui.expColWhere"
-                    data-i18n-es={ui.expColWhere.es}
-                    data-i18n-en={ui.expColWhere.en}
-                >
-                    {ui.expColWhere.es}
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            {e.items.map((row, idx) => (
-                <tr>
-                    <td>{row.year}</td>
-                    <td
+                    {row.year.es}
+                </div>
+                <div class="exp-body">
+                    <h3
+                        class="exp-role"
                         data-i18n={`experience.${idx}.role`}
                         data-i18n-es={row.role.es}
                         data-i18n-en={row.role.en}
                     >
                         {row.role.es}
-                    </td>
-                    <td
+                    </h3>
+                    <div
+                        class="exp-where"
                         data-i18n={`experience.${idx}.where`}
                         data-i18n-es={row.where.es}
                         data-i18n-en={row.where.en}
                     >
                         {row.where.es}
-                    </td>
-                </tr>
-            ))}
-        </tbody>
-    </table>
+                    </div>
+                    {row.summary && (
+                        <p
+                            class="exp-summary"
+                            data-i18n={`experience.${idx}.summary`}
+                            data-i18n-es={row.summary.es}
+                            data-i18n-en={row.summary.en}
+                        >
+                            {row.summary.es}
+                        </p>
+                    )}
+                    {row.highlights && (
+                        <ul class="exp-highlights">
+                            {row.highlights.es.map((text, i) => (
+                                <li
+                                    data-i18n={`experience.${idx}.highlights.${i}`}
+                                    data-i18n-es={text}
+                                    data-i18n-en={row.highlights?.en[i] ?? text}
+                                >
+                                    {text}
+                                </li>
+                            ))}
+                        </ul>
+                    )}
+                    {row.tags && (
+                        <div class="project-tags">
+                            {row.tags.map((tag) => (
+                                <span class="project-tag">{tag}</span>
+                            ))}
+                        </div>
+                    )}
+                </div>
+            </li>
+        ))}
+    </ol>
 </section>

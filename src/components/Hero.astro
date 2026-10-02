@@ -1,14 +1,16 @@
 ---
 import type { Portfolio } from "../lib/types";
+import { publicFileExists } from "../lib/portfolio";
 interface Props {
     data: Portfolio;
 }
 const { data } = Astro.props;
 const p = data.profile;
 const ui = data.ui;
+const photo = publicFileExists(p.photo) ? p.photo : null;
 ---
 
-<section class="hero" id="top" aria-label="Hero">
+<section class={photo ? "hero has-photo" : "hero"} id="top" aria-label="Hero">
     <div class="hero-main">
         <div
             class="kicker"
@@ -57,4 +59,9 @@ const ui = data.ui;
             </a>
         </div>
     </div>
+    {photo && (
+        <div class="hero-photo">
+            <img src={photo} alt={p.title} width="480" height="600" />
+        </div>
+    )}
 </section>

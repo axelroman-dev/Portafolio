@@ -11,6 +11,7 @@ export interface Site {
 
 export interface Profile {
     title: string;
+    photo?: string | null;
     kicker: Localized;
     role: Localized;
     tagline: Localized;
@@ -47,6 +48,8 @@ export interface StackGroup {
 export interface ProjectItem {
     id: string;
     initials: string;
+    icon?: string | null;
+    iconFill?: boolean;
     name: string;
     category: Localized;
     tags: string[];
@@ -63,9 +66,12 @@ export interface Projects {
 }
 
 export interface ExperienceRow {
-    year: string;
+    year: Localized;
     role: Localized;
     where: Localized;
+    summary?: Localized;
+    highlights?: { es: string[]; en: string[] };
+    tags?: string[];
 }
 
 export interface Experience {
@@ -103,9 +109,6 @@ export type UiKey =
     | "statYears"
     | "statProjects"
     | "statLangs"
-    | "expColYear"
-    | "expColRole"
-    | "expColWhere"
     | "repo"
     | "web"
     | "fName"

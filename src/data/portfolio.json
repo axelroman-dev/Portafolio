@@ -6,6 +6,7 @@
     },
     "profile": {
         "title": "Axel Roman",
+        "photo": "/img/profile.jpg",
         "kicker": {
             "es": "Ingeniero en Sistemas · Fullstack",
             "en": "Systems Engineer · Fullstack"
@@ -60,7 +61,7 @@
                 "meta": "Axel Roman",
                 "href": "https://www.linkedin.com/in/axelroman-dev/"
             },
-            { "id": "cv", "label": "CV", "meta": "PDF", "href": "#" }
+            { "id": "cv", "label": "CV", "meta": "PDF", "href": "/cv/axel-roman-cv.pdf" }
         ]
     },
     "stack": [
@@ -99,6 +100,7 @@
             {
                 "id": "homelab",
                 "initials": "HL",
+                "icon": "/img/projects/homelab.svg",
                 "name": "Homelab",
                 "category": {
                     "es": "Infraestructura · Linux",
@@ -115,6 +117,7 @@
             {
                 "id": "browsersync",
                 "initials": "BS",
+                "icon": "/img/projects/browsersync.svg",
                 "name": "BrowserSync",
                 "category": {
                     "es": "Extensión · Self-hosted",
@@ -129,19 +132,20 @@
                 "url": "https://browsersync.axelroman.dev/"
             },
             {
-                "id": "clinicadual",
-                "initials": "CD",
-                "name": "ClinicaDual",
+                "id": "finanzaspersonales",
+                "initials": "FP",
+                "icon": "/img/projects/finanzaspersonales.svg",
+                "name": "Finanzas Personales",
                 "category": {
-                    "es": "Escritorio · Gestión clínica",
-                    "en": "Desktop · Clinic management"
+                    "es": "Web · Finanzas personales",
+                    "en": "Web · Personal finances"
                 },
-                "tags": ["C#", "MySQL", "Escritorio"],
+                "tags": ["TypeScript", "Next.js", "React", "Web"],
                 "desc": {
-                    "es": "Aplicacion de escritorio en csharp para el manejo de citas de pacientes, pagos, reportes.",
-                    "en": "Desktop application in C# for managing patient appointments, payments and reports."
+                    "es": "Aplicacion web para gestionar las finanzas personales.",
+                    "en": "Web application to manage personal finances."
                 },
-                "repo": null,
+                "repo": "https://github.com/axelroman-dev/FinanzasPersonales",
                 "url": null
             }
         ]
@@ -157,26 +161,76 @@
         },
         "items": [
             {
-                "year": "2025 - Actualidad",
+                "year": {
+                    "es": "Jun 2023 – Actualidad",
+                    "en": "Jun 2023 – Present"
+                },
                 "role": {
-                    "es": "Analista de soporte tecnico TI",
-                    "en": "Analyst of technical support TI"
+                    "es": "Analista de soporte técnico TI",
+                    "en": "IT Support Analyst"
                 },
                 "where": {
                     "es": "Kalte Logistik",
                     "en": "Kalte Logistik"
-                }
+                },
+                "summary": {
+                    "es": "Desarrollo y mantenimiento de los sistemas que sostienen la operación logística, además del soporte a la infraestructura TI.",
+                    "en": "Building and maintaining the systems behind the logistics operation, plus support for the IT infrastructure."
+                },
+                "highlights": {
+                    "es": [
+                        "Diseño e implementación de un sistema de control de evidencias para transportistas: captura de fotos, firma digital y validación de documentos, integrando el cliente móvil con la API corporativa existente.",
+                        "Módulo de verificación GPS en tiempo real que valida coordenadas y marcas de tiempo para garantizar la integridad y autenticidad de cada operación logística.",
+                        "Nuevos endpoints en la API C# (ASP.NET) para extender el sistema corporativo, manteniendo compatibilidad con el sistema legado.",
+                        "Microservicio independiente para desacoplar procesos pesados del servidor Java/Tomcat, mejorando el rendimiento y la escalabilidad.",
+                        "Administración y optimización del sistema web Java/Tomcat; gestión de incidencias y soporte a infraestructura mediante sistema de tickets."
+                    ],
+                    "en": [
+                        "Designed and built an evidence-control system for carriers: photo capture, digital signature and document validation, integrating the mobile client with the existing corporate API.",
+                        "Real-time GPS verification module that validates coordinates and timestamps to guarantee the integrity and authenticity of every logistics operation.",
+                        "New endpoints in the C# (ASP.NET) API to extend the corporate system while staying compatible with the legacy system.",
+                        "Standalone microservice that offloads heavy processes from the Java/Tomcat server, improving performance and scalability.",
+                        "Administered and optimized the Java/Tomcat web system; handled incidents and infrastructure support through a ticketing system."
+                    ]
+                },
+                "tags": ["C#", "ASP.NET", "Java", "Tomcat", "Microservicios", "GPS"]
             },
             {
-                "year": "2021 - 2024",
+                "year": {
+                    "es": "Jun 2021 – Ene 2024",
+                    "en": "Jun 2021 – Jan 2024"
+                },
                 "role": {
-                    "es": "Desarrollador de Aplicaciones móviles",
-                    "en": "Mobile App Developer"
+                    "es": "Desarrollador de software Full-Stack",
+                    "en": "Full-Stack Software Developer"
                 },
                 "where": {
-                    "es": "NetRabbit",
-                    "en": "NetRabbit"
-                }
+                    "es": "NetRabbit SA de CV",
+                    "en": "NetRabbit SA de CV"
+                },
+                "summary": {
+                    "es": "Desarrollo y liderazgo técnico de sistemas en tiempo real para transporte y restaurantes, de la arquitectura a producción.",
+                    "en": "Development and technical leadership of real-time systems for transport and restaurants, from architecture to production."
+                },
+                "highlights": {
+                    "es": [
+                        "Sistema de gestión de transporte para taxistas en Cuajimalpa: localización en tiempo real, asignación de viajes y control de disponibilidad, con Firebase como backend reactivo.",
+                        "Sistema de inventario para restaurantes: registro de productos, control de stock y reportes, con sincronización en tiempo real y acceso desde dispositivos móviles.",
+                        "Firebase (Firestore y Authentication) como backend en tiempo real: seguridad de datos, reglas de acceso y sincronización entre clientes.",
+                        "Liderazgo técnico del equipo en ambos proyectos: definición de arquitectura, distribución de tareas, revisiones de código y coordinación hasta producción.",
+                        "APIs REST con NestJS y PostgreSQL: diseño de esquemas, migraciones, endpoints y documentación para clientes front-end y móvil.",
+                        "Pipelines CI/CD con GitHub Actions e integración de pagos con Stripe."
+                    ],
+                    "en": [
+                        "Transport management system for taxi drivers in Cuajimalpa: real-time location, trip assignment and availability control, with Firebase as a reactive backend.",
+                        "Inventory system for restaurants: product registry, stock control and reports, with real-time sync and access from mobile devices.",
+                        "Firebase (Firestore and Authentication) as a real-time backend: data security, access rules and client synchronization.",
+                        "Technical lead of the team on both projects: architecture, task distribution, code reviews and coordination through to production.",
+                        "REST APIs with NestJS and PostgreSQL: schema design, migrations, endpoints and documentation for front-end and mobile clients.",
+                        "CI/CD pipelines with GitHub Actions and Stripe payment integration."
+                    ]
+                },
+                "tags": ["NestJS", "PostgreSQL", "Firebase", "Flutter", "GitHub Actions", "Stripe"]
             }
         ]
     },
@@ -212,9 +266,6 @@
         "statYears": { "es": "Años programando", "en": "Years coding" },
         "statProjects": { "es": "Proyectos", "en": "Own projects" },
         "statLangs": { "es": "Lenguajes", "en": "Languages" },
-        "expColYear": { "es": "Periodo", "en": "Period" },
-        "expColRole": { "es": "Rol", "en": "Role" },
-        "expColWhere": { "es": "Lugar", "en": "Place" },
         "repo": { "es": "Repositorio", "en": "Repository" },
         "web": { "es": "Ver sitio", "en": "Visit site" },
         "fName": { "es": "Nombre", "en": "Name" },

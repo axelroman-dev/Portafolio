@@ -1,5 +1,6 @@
 ---
 import type { Portfolio } from "../lib/types";
+import { publicFileExists } from "../lib/portfolio";
 interface Props {
     data: Portfolio;
 }
@@ -56,7 +57,13 @@ const ui = data.ui;
                     data-tags={p.tags.join("|")}
                 >
                     <div class="project-head">
-                        <div class="project-initials">{p.initials}</div>
+                        {publicFileExists(p.icon) ? (
+                            <div class={p.iconFill ? "project-icon fill" : "project-icon"}>
+                                <img src={p.icon} alt="" width="66" height="66" loading="lazy" />
+                            </div>
+                        ) : (
+                            <div class="project-initials">{p.initials}</div>
+                        )}
                         <div class="project-meta">
                             <div class="project-name">{p.name}</div>
                             <div

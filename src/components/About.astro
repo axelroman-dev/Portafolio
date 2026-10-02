@@ -1,11 +1,14 @@
 ---
 import type { Portfolio } from "../lib/types";
+import { publicFileExists } from "../lib/portfolio";
 interface Props {
     data: Portfolio;
 }
 const { data } = Astro.props;
 const a = data.about;
 const l = data.links;
+// Local files (e.g. the CV in public/cv/) are hidden until they exist.
+const links = l.items.filter((item) => !item.href.startsWith("/") || publicFileExists(item.href));
 ---
 
 <section class="about section" aria-label="Sobre mí">
@@ -43,8 +46,13 @@ const l = data.links;
             {l.kicker.es}
         </div>
         <div class="links-list">
-            {l.items.map((item) => (
-                <a class="link-row" href={item.href}>
+            {links.map((item) => (
+                <a
+                    class="link-row"
+                    href={item.href}
+                    target={item.href.endsWith(".pdf") ? "_blank" : undefined}
+                    rel={item.href.endsWith(".pdf") ? "noopener" : undefined}
+                >
                     <span>{item.label}</span>
                     <span class="meta">{item.meta}</span>
                 </a>

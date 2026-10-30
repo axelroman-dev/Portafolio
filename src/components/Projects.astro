@@ -1,6 +1,7 @@
 ---
+import { Image } from "astro:assets";
 import type { Portfolio } from "../lib/types";
-import { publicFileExists } from "../lib/portfolio";
+import { getScreenshot, publicFileExists } from "../lib/portfolio";
 interface Props {
     data: Portfolio;
 }
@@ -45,10 +46,16 @@ const ui = data.ui;
 
     <div class="projects-grid">
         {proj.items.map((p) => {
-            const hasRepo = !!p.repo;
-            const hasUrl = !!p.url;
-            const repoLabel = ui.repo.es;
-            const urlLabel = ui.web.es;
+            const links = (p.links ?? []).map((l) => ({
+                href: l.href,
+                label: typeof l.label === "string" ? { es: l.label, en: l.label } : l.label,
+                external: /^https?:\/\//.test(l.href),
+            }));
+            const shots = (p.screenshots ?? []).map((s) => ({
+                image: getScreenshot(s.src),
+                alt: s.alt,
+            }));
+            const cover = shots[0];
             return (
                 <article
                     class="project-card"
@@ -56,14 +63,51 @@ const ui = data.ui;
                     data-id={p.id}
                     data-tags={p.tags.join("|")}
                 >
+                    {cover && (
+                        <button
+                            type="button"
+                            class="project-shot"
+                            data-gallery-open={p.id}
+                            aria-label={`Ver capturas de ${p.name}`}
+                            data-i18n-attr="aria-label:shots"
+                            data-i18n-aria-label-es={`Ver capturas de ${p.name}`}
+                            data-i18n-aria-label-en={`View screenshots of ${p.name}`}
+                        >
+                            <Image
+                                src={cover.image}
+                                alt=""
+                                widths={[400, 640, 960]}
+                                sizes="(min-width: 1060px) 33vw, (min-width: 700px) 50vw, 100vw"
+                                loading="lazy"
+                            />
+                            {shots.length > 1 && (
+                                <span class="project-shot-count">+{shots.length - 1}</span>
+                            )}
+                        </button>
+                    )}
+                    {cover && (
+                        <template data-gallery-src={p.id}>
+                            {shots.map((s) => (
+                                <Image
+                                    src={s.image}
+                                    alt={s.alt.es}
+                                    data-alt-es={s.alt.es}
+                                    data-alt-en={s.alt.en}
+                                    widths={[800, 1280, 1920]}
+                                    sizes="(min-width: 1240px) 1200px, 100vw"
+                                    loading="eager"
+                                />
+                            ))}
+                        </template>
+                    )}
                     <div class="project-head">
                         {publicFileExists(p.icon) ? (
                             <div class={p.iconFill ? "project-icon fill" : "project-icon"}>
                                 <img src={p.icon} alt="" width="66" height="66" loading="lazy" />
                             </div>
-                        ) : (
-                            <div class="project-initials">{p.initials}</div>
-                        )}
+                        ) : p.initials?.trim() ? (
+                            <div class="project-initials">{p.initials.trim()}</div>
+                        ) : null}
                         <div class="project-meta">
                             <div class="project-name">{p.name}</div>
                             <div
@@ -89,34 +133,21 @@ const ui = data.ui;
                     >
                         {p.desc.es}
                     </p>
-                    {(hasRepo || hasUrl) && (
+                    {links.length > 0 && (
                         <div class="project-links">
-                            {hasRepo && (
+                            {links.map((l, i) => (
                                 <a
                                     class="project-link"
-                                    href={p.repo!}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    data-i18n={`project.${p.id}.repo`}
-                                    data-i18n-es={repoLabel}
-                                    data-i18n-en={ui.repo.en}
+                                    href={l.href}
+                                    target={l.external ? "_blank" : undefined}
+                                    rel={l.external ? "noopener noreferrer" : undefined}
+                                    data-i18n={`project.${p.id}.link${i}`}
+                                    data-i18n-es={l.label.es}
+                                    data-i18n-en={l.label.en}
                                 >
-                                    {repoLabel}
+                                    {l.label.es}
                                 </a>
-                            )}
-                            {hasUrl && (
-                                <a
-                                    class="project-link"
-                                    href={p.url!}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    data-i18n={`project.${p.id}.web`}
-                                    data-i18n-es={urlLabel}
-                                    data-i18n-en={ui.web.en}
-                                >
-                                    {urlLabel}
-                                </a>
-                            )}
+                            ))}
                         </div>
                     )}
                 </article>
@@ -132,4 +163,49 @@ const ui = data.ui;
             Sin proyectos para este filtro.
         </div>
     </div>
+
+    <dialog class="gallery" data-gallery aria-label="Capturas del proyecto">
+        <div class="gallery-bar">
+            <span class="gallery-counter" data-gallery-counter></span>
+            <button
+                type="button"
+                class="gallery-btn"
+                data-gallery-close
+                aria-label="Cerrar"
+                data-i18n-attr="aria-label:close"
+                data-i18n-aria-label-es="Cerrar"
+                data-i18n-aria-label-en="Close"
+            >
+                ✕
+            </button>
+        </div>
+        <div class="gallery-stage">
+            <button
+                type="button"
+                class="gallery-btn gallery-prev"
+                data-gallery-prev
+                aria-label="Captura anterior"
+                data-i18n-attr="aria-label:prev"
+                data-i18n-aria-label-es="Captura anterior"
+                data-i18n-aria-label-en="Previous screenshot"
+            >
+                ←
+            </button>
+            <figure class="gallery-figure">
+                <div class="gallery-image" data-gallery-image></div>
+                <figcaption class="gallery-caption" data-gallery-caption></figcaption>
+            </figure>
+            <button
+                type="button"
+                class="gallery-btn gallery-next"
+                data-gallery-next
+                aria-label="Siguiente captura"
+                data-i18n-attr="aria-label:next"
+                data-i18n-aria-label-es="Siguiente captura"
+                data-i18n-aria-label-en="Next screenshot"
+            >
+                →
+            </button>
+        </div>
+    </dialog>
 </section>

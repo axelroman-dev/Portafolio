@@ -1,5 +1,5 @@
 // Client-side state for the portfolio: language switch, theme switch,
-// project filters and contact form. All content is driven by
+// project filters, screenshot gallery and contact form. All content is driven by
 // data attributes on the rendered HTML — the JSON is the single source
 // of truth on the server.
 
@@ -210,10 +210,81 @@ function setupTweaksPanel() {
     });
 }
 
+function setupGallery() {
+    const dialog = $("[data-gallery]") as HTMLDialogElement | null;
+    const stage = $("[data-gallery-image]");
+    const caption = $("[data-gallery-caption]");
+    const counter = $("[data-gallery-counter]");
+    const prev = $("[data-gallery-prev]") as HTMLButtonElement | null;
+    const next = $("[data-gallery-next]") as HTMLButtonElement | null;
+    const close = $("[data-gallery-close]") as HTMLButtonElement | null;
+    if (!dialog || !stage || !caption || !counter || !prev || !next || !close) return;
+
+    let images: HTMLImageElement[] = [];
+    let index = 0;
+
+    const render = () => {
+        const source = images[index];
+        if (!source) return;
+        const lang = getLang();
+        const img = source.cloneNode() as HTMLImageElement;
+        const alt = source.getAttribute(`data-alt-${lang}`) ?? source.alt;
+        img.alt = alt;
+        stage.replaceChildren(img);
+        caption.textContent = alt;
+        counter.textContent = `${index + 1} / ${images.length}`;
+        const single = images.length < 2;
+        prev.hidden = single;
+        next.hidden = single;
+    };
+
+    const go = (step: number) => {
+        if (images.length < 2) return;
+        index = (index + step + images.length) % images.length;
+        render();
+    };
+
+    $$("[data-gallery-open]").forEach((btn) => {
+        btn.addEventListener("click", () => {
+            const id = btn.getAttribute("data-gallery-open");
+            const tpl = document.querySelector(
+                `template[data-gallery-src="${CSS.escape(id ?? "")}"]`,
+            ) as HTMLTemplateElement | null;
+            if (!tpl) return;
+            images = Array.from(tpl.content.querySelectorAll("img"));
+            if (images.length === 0) return;
+            index = 0;
+            render();
+            dialog.showModal();
+        });
+    });
+
+    prev.addEventListener("click", () => go(-1));
+    next.addEventListener("click", () => go(1));
+    close.addEventListener("click", () => dialog.close());
+
+    // Click on the backdrop (outside the content) closes the gallery.
+    dialog.addEventListener("click", (event) => {
+        if (event.target === dialog) dialog.close();
+    });
+
+    dialog.addEventListener("keydown", (event) => {
+        if (event.key === "ArrowLeft") go(-1);
+        if (event.key === "ArrowRight") go(1);
+    });
+
+    dialog.addEventListener("close", () => stage.replaceChildren());
+
+    document.addEventListener("lang:changed", () => {
+        if (dialog.open) render();
+    });
+}
+
 export function initPortfolio() {
     setupTheme();
     setupLang();
     setupFilters();
+    setupGallery();
     setupContactForm();
     setupTweaksPanel();
 }

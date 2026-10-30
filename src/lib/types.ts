@@ -45,17 +45,32 @@ export interface StackGroup {
     items: string[];
 }
 
+export interface ProjectScreenshot {
+    // Path relative to src/assets/projects/, e.g. "browsersync/01-popup.png".
+    src: string;
+    alt: Localized;
+}
+
+export interface ProjectLink {
+    // Plain string when the text is the same in both languages.
+    label: string | Localized;
+    href: string;
+}
+
 export interface ProjectItem {
     id: string;
-    initials: string;
+    // Fallback badge when there is no icon; omit both to hide the badge.
+    initials?: string | null;
     icon?: string | null;
     iconFill?: boolean;
     name: string;
     category: Localized;
     tags: string[];
     desc: Localized;
-    repo: string | null;
-    url: string | null;
+    // Rendered in order as buttons: repos, live sites, stores, docs, etc.
+    links?: ProjectLink[];
+    // First screenshot is the card cover; the rest open in the gallery.
+    screenshots?: ProjectScreenshot[];
 }
 
 export interface Projects {
@@ -109,8 +124,6 @@ export type UiKey =
     | "statYears"
     | "statProjects"
     | "statLangs"
-    | "repo"
-    | "web"
     | "fName"
     | "fNamePh"
     | "fEmail"

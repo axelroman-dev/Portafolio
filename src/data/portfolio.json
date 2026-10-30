@@ -1,290 +1,453 @@
 {
-    "site": {
-        "brand": "AXEL ROMAN",
-        "year": 2026,
-        "owner": "Axel Roman"
+  "site": {
+    "brand": "AXEL ROMAN",
+    "year": 2026,
+    "owner": "Axel Roman"
+  },
+  "profile": {
+    "title": "Axel Roman",
+    "photo": "/img/profile.jpg",
+    "kicker": {
+      "es": "Ingeniero en Sistemas · Fullstack",
+      "en": "Systems Engineer · Fullstack"
     },
-    "profile": {
-        "title": "Axel Roman",
-        "photo": "/img/profile.jpg",
-        "kicker": {
-            "es": "Ingeniero en Sistemas · Fullstack",
-            "en": "Systems Engineer · Fullstack"
+    "role": {
+      "es": "Ingniero en Sistema y Desarrollador FullStack",
+      "en": "Systems Engineer and Fullstack Developer"
+    },
+    "tagline": {
+      "es": "Contruyo cada proyecto como mi meta personal",
+      "en": "I build every project as a personal goal"
+    }
+  },
+  "stats": {
+    "years": 5
+  },
+  "about": {
+    "kicker": {
+      "es": "Sobre mí",
+      "en": "About"
+    },
+    "title": {
+      "es": "Del servidor a la interfaz",
+      "en": "From the server to the interface"
+    },
+    "paragraphs": {
+      "es": [
+        "Trabajo en todo el recorrido de un producto: base de datos, backend, interfaz y el servidor donde termina corriendo. Me muevo igual en Java, C# y Python que en JavaScript, y administro mis propios servidores Linux para entender qué pasa después del despliegue.",
+        "Cada proyecto que aparece abajo nació de una necesidad concreta y lo llevé de punta a punta, incluyendo la infraestructura self-hosted."
+      ],
+      "en": [
+        "I work across the whole span of a product: database, backend, interface and the server it ends up running on. I move as easily in Java, C# and Python as in JavaScript, and I run my own Linux servers to understand what happens after deployment.",
+        "Every project below started from a concrete need and I carried it end to end, self-hosted infrastructure included."
+      ]
+    }
+  },
+  "links": {
+    "kicker": {
+      "es": "Enlaces",
+      "en": "Links"
+    },
+    "items": [
+      {
+        "id": "github",
+        "label": "GitHub",
+        "meta": "@axelroman-dev",
+        "href": "https://github.com/axelroman-dev"
+      },
+      {
+        "id": "linkedin",
+        "label": "LinkedIn",
+        "meta": "Axel Roman",
+        "href": "https://www.linkedin.com/in/axelroman-dev/"
+      },
+      {
+        "id": "cv",
+        "label": "CV",
+        "meta": "PDF",
+        "href": "/cv/axel-roman-cv.pdf"
+      }
+    ]
+  },
+  "stack": [
+    {
+      "id": "languages",
+      "title": {
+        "es": "Lenguajes",
+        "en": "Languages"
+      },
+      "items": ["JavaScript", "Java", "C#", "Dart"]
+    },
+    {
+      "id": "frontend",
+      "title": {
+        "es": "Frontend",
+        "en": "Frontend"
+      },
+      "items": ["HTML", "CSS", "JavaScript", "Flutter"]
+    },
+    {
+      "id": "data",
+      "title": {
+        "es": "Datos",
+        "en": "Data"
+      },
+      "items": ["MySQL", "PostgreSQL"]
+    },
+    {
+      "id": "infra",
+      "title": {
+        "es": "Infraestructura",
+        "en": "Infrastructure"
+      },
+      "items": ["Docker", "Linux", "Ubuntu Server", "Windows Server"]
+    }
+  ],
+  "projects": {
+    "kicker": {
+      "es": "Trabajo seleccionado",
+      "en": "Selected work"
+    },
+    "title": {
+      "es": "Proyectos",
+      "en": "Projects"
+    },
+    "filters": ["all", "JavaScript", "C#", "Docker", "Linux"],
+    "items": [
+      {
+        "id": "homelab",
+        "initials": null,
+        "icon": null,
+        "name": "Homelab",
+        "category": {
+          "es": "Infraestructura · Linux",
+          "en": "Infrastructure · Linux"
+        },
+        "tags": ["Linux", "Proxmox", "Docker", "Cloudflared", "Nginx"],
+        "desc": {
+          "es": "Administracion de servidor personal (practica de manejo de servidores linux).",
+          "en": "Personal server administration — hands-on practice running Linux servers."
+        },
+        "screenshots": [
+          {
+            "src": "homelab/proxmox.png",
+            "alt": { "es": "", "en": "" }
+          }
+        ],
+        "links": [
+          {
+            "label": {
+              "es": "Github",
+              "en": "Github"
+            },
+            "href": "https://github.com/axelroman-dev/homelab-stacks"
+          }
+        ]
+      },
+      {
+        "id": "browsersync",
+        "initials": null,
+        "icon": null,
+        "name": "BrowserSync",
+        "category": {
+          "es": "Extensión · Self-hosted",
+          "en": "Extension · Self-hosted"
+        },
+        "tags": ["JavaScript", "Docker", "Self-hosted"],
+        "desc": {
+          "es": "Extension para navegadores chromium / mozilla y una imagen de docker para levantar un servidor para la extension que es self-hosted.",
+          "en": "Extension for chromium browsers plus a docker image that spins up the self-hosted server the extension talks to."
+        },
+        "screenshots": [
+          {
+            "src": "browsersync/01-sync.png",
+            "alt": { "es": "", "en": "" }
+          },
+          {
+            "src": "browsersync/02-passwords.png",
+            "alt": { "es": "", "en": "" }
+          },
+          {
+            "src": "browsersync/03-generator.png",
+            "alt": { "es": "", "en": "" }
+          },
+          {
+            "src": "browsersync/04-settings.png",
+            "alt": { "es": "", "en": "" }
+          }
+        ],
+        "links": [
+          {
+            "label": {
+              "es": "Github",
+              "en": "Github"
+            },
+            "href": "https://github.com/axelroman-dev/BrowserSync"
+          },
+          {
+            "label": {
+              "es": "Ver sitio",
+              "en": "Visit site"
+            },
+            "href": "https://browsersync.axelroman.dev/"
+          },
+          {
+            "label": {
+              "es": "Chrome Store",
+              "en": "Chrome Store"
+            },
+            "href": "https://chromewebstore.google.com/detail/browsersync-self-hosted/maihfciicepeinnpcdoiafijgghcfeme"
+          },
+          {
+            "label": {
+              "es": "Addons Mozilla",
+              "en": "Addons Mozilla"
+            },
+            "href": "https://addons.mozilla.org/en-US/firefox/addon/browsersync-self-hosted"
+          }
+        ]
+      },
+      {
+        "id": "finanzaspersonales",
+        "initials": null,
+        "icon": null,
+        "name": "Finanzas Personales",
+        "category": {
+          "es": "Web · Finanzas personales",
+          "en": "Web · Personal finances"
+        },
+        "tags": ["TypeScript", "Next.js", "React", "Web"],
+        "desc": {
+          "es": "Aplicacion web para gestionar las finanzas personales.",
+          "en": "Web application to manage personal finances."
+        },
+        "screenshots": [
+          {
+            "src": "finanzaspersonales/01-dashboard.png",
+            "alt": { "es": "", "en": "" }
+          },
+          {
+            "src": "finanzaspersonales/02-cuentas.png",
+            "alt": { "es": "", "en": "" }
+          },
+          {
+            "src": "finanzaspersonales/03-movimientos.png",
+            "alt": { "es": "", "en": "" }
+          },
+          {
+            "src": "finanzaspersonales/04-categorias.png",
+            "alt": { "es": "", "en": "" }
+          },
+          {
+            "src": "finanzaspersonales/05-suscripciones.png",
+            "alt": { "es": "", "en": "" }
+          },
+          {
+            "src": "finanzaspersonales/06-reportes.png",
+            "alt": { "es": "", "en": "" }
+          }
+        ],
+        "links": [
+          {
+            "label": {
+              "es": "Github",
+              "en": "Github"
+            },
+            "href": "https://github.com/axelroman-dev/FinanzasPersonales"
+          }
+        ]
+      }
+    ]
+  },
+  "experience": {
+    "kicker": {
+      "es": "Experiencia",
+      "en": "Experience"
+    },
+    "title": {
+      "es": "Trayectoria",
+      "en": "Track record"
+    },
+    "items": [
+      {
+        "year": {
+          "es": "Jun 2023 – Actualidad",
+          "en": "Jun 2023 – Present"
         },
         "role": {
-            "es": "Ingniero en Sistema y Desarrollador FullStack",
-            "en": "Systems Engineer and Fullstack Developer"
+          "es": "Analista de soporte técnico TI",
+          "en": "IT Support Analyst"
         },
-        "tagline": {
-            "es": "Contruyo cada proyecto como mi meta personal",
-            "en": "I build every project as a personal goal"
-        }
+        "where": {
+          "es": "Kalte Logistik",
+          "en": "Kalte Logistik"
+        },
+        "summary": {
+          "es": "Desarrollo y mantenimiento de los sistemas que sostienen la operación logística, además del soporte a la infraestructura TI.",
+          "en": "Building and maintaining the systems behind the logistics operation, plus support for the IT infrastructure."
+        },
+        "highlights": {
+          "es": [
+            "Diseño e implementación de un sistema de control de evidencias para transportistas: captura de fotos, firma digital y validación de documentos, integrando el cliente móvil con la API corporativa existente.",
+            "Módulo de verificación GPS en tiempo real que valida coordenadas y marcas de tiempo para garantizar la integridad y autenticidad de cada operación logística.",
+            "Nuevos endpoints en la API C# (ASP.NET) para extender el sistema corporativo, manteniendo compatibilidad con el sistema legado.",
+            "Microservicio independiente para desacoplar procesos pesados del servidor Java/Tomcat, mejorando el rendimiento y la escalabilidad.",
+            "Administración y optimización del sistema web Java/Tomcat; gestión de incidencias y soporte a infraestructura mediante sistema de tickets."
+          ],
+          "en": [
+            "Designed and built an evidence-control system for carriers: photo capture, digital signature and document validation, integrating the mobile client with the existing corporate API.",
+            "Real-time GPS verification module that validates coordinates and timestamps to guarantee the integrity and authenticity of every logistics operation.",
+            "New endpoints in the C# (ASP.NET) API to extend the corporate system while staying compatible with the legacy system.",
+            "Standalone microservice that offloads heavy processes from the Java/Tomcat server, improving performance and scalability.",
+            "Administered and optimized the Java/Tomcat web system; handled incidents and infrastructure support through a ticketing system."
+          ]
+        },
+        "tags": ["C#", "ASP.NET", "Java", "Tomcat", "Microservicios", "GPS"]
+      },
+      {
+        "year": {
+          "es": "Jun 2021 – Ene 2024",
+          "en": "Jun 2021 – Jan 2024"
+        },
+        "role": {
+          "es": "Desarrollador de software Full-Stack",
+          "en": "Full-Stack Software Developer"
+        },
+        "where": {
+          "es": "NetRabbit SA de CV",
+          "en": "NetRabbit SA de CV"
+        },
+        "summary": {
+          "es": "Desarrollo y liderazgo técnico de sistemas en tiempo real para transporte y restaurantes, de la arquitectura a producción.",
+          "en": "Development and technical leadership of real-time systems for transport and restaurants, from architecture to production."
+        },
+        "highlights": {
+          "es": [
+            "Sistema de gestión de transporte para taxistas en Cuajimalpa: localización en tiempo real, asignación de viajes y control de disponibilidad, con Firebase como backend reactivo.",
+            "Sistema de inventario para restaurantes: registro de productos, control de stock y reportes, con sincronización en tiempo real y acceso desde dispositivos móviles.",
+            "Firebase (Firestore y Authentication) como backend en tiempo real: seguridad de datos, reglas de acceso y sincronización entre clientes.",
+            "Liderazgo técnico del equipo en ambos proyectos: definición de arquitectura, distribución de tareas, revisiones de código y coordinación hasta producción.",
+            "APIs REST con NestJS y PostgreSQL: diseño de esquemas, migraciones, endpoints y documentación para clientes front-end y móvil.",
+            "Pipelines CI/CD con GitHub Actions e integración de pagos con Stripe."
+          ],
+          "en": [
+            "Transport management system for taxi drivers in Cuajimalpa: real-time location, trip assignment and availability control, with Firebase as a reactive backend.",
+            "Inventory system for restaurants: product registry, stock control and reports, with real-time sync and access from mobile devices.",
+            "Firebase (Firestore and Authentication) as a real-time backend: data security, access rules and client synchronization.",
+            "Technical lead of the team on both projects: architecture, task distribution, code reviews and coordination through to production.",
+            "REST APIs with NestJS and PostgreSQL: schema design, migrations, endpoints and documentation for front-end and mobile clients.",
+            "CI/CD pipelines with GitHub Actions and Stripe payment integration."
+          ]
+        },
+        "tags": ["NestJS", "PostgreSQL", "Firebase", "Flutter", "GitHub Actions", "Stripe"]
+      }
+    ]
+  },
+  "contact": {
+    "kicker": {
+      "es": "Contacto",
+      "en": "Contact"
     },
-    "stats": {
-        "years": 5
+    "title": {
+      "es": "Hablemos de tu proyecto",
+      "en": "Let's talk about your project"
     },
-    "about": {
-        "kicker": {
-            "es": "Sobre mí",
-            "en": "About"
-        },
-        "title": {
-            "es": "Del servidor a la interfaz",
-            "en": "From the server to the interface"
-        },
-        "paragraphs": {
-            "es": [
-                "Trabajo en todo el recorrido de un producto: base de datos, backend, interfaz y el servidor donde termina corriendo. Me muevo igual en Java, C# y Python que en JavaScript, y administro mis propios servidores Linux para entender qué pasa después del despliegue.",
-                "Cada proyecto que aparece abajo nació de una necesidad concreta y lo llevé de punta a punta, incluyendo la infraestructura self-hosted."
-            ],
-            "en": [
-                "I work across the whole span of a product: database, backend, interface and the server it ends up running on. I move as easily in Java, C# and Python as in JavaScript, and I run my own Linux servers to understand what happens after deployment.",
-                "Every project below started from a concrete need and I carried it end to end, self-hosted infrastructure included."
-            ]
-        }
+    "body": {
+      "es": "Cuéntame qué necesitas construir. Responderé lo antes posible.",
+      "en": "Tell me what you need to build. I reply as soon as possible."
     },
-    "links": {
-        "kicker": {
-            "es": "Enlaces",
-            "en": "Links"
-        },
-        "items": [
-            {
-                "id": "github",
-                "label": "GitHub",
-                "meta": "@axelroman-dev",
-                "href": "https://github.com/axelroman-dev"
-            },
-            {
-                "id": "linkedin",
-                "label": "LinkedIn",
-                "meta": "Axel Roman",
-                "href": "https://www.linkedin.com/in/axelroman-dev/"
-            },
-            { "id": "cv", "label": "CV", "meta": "PDF", "href": "/cv/axel-roman-cv.pdf" }
-        ]
-    },
-    "stack": [
-        {
-            "id": "languages",
-            "title": { "es": "Lenguajes", "en": "Languages" },
-            "items": ["JavaScript", "Java", "C#", "Dart"]
-        },
-        {
-            "id": "frontend",
-            "title": { "es": "Frontend", "en": "Frontend" },
-            "items": ["HTML", "CSS", "JavaScript", "Flutter"]
-        },
-        {
-            "id": "data",
-            "title": { "es": "Datos", "en": "Data" },
-            "items": ["MySQL", "PostgreSQL"]
-        },
-        {
-            "id": "infra",
-            "title": { "es": "Infraestructura", "en": "Infrastructure" },
-            "items": ["Docker", "Linux", "Ubuntu Server", "Windows Server"]
-        }
-    ],
-    "projects": {
-        "kicker": {
-            "es": "Trabajo seleccionado",
-            "en": "Selected work"
-        },
-        "title": {
-            "es": "Proyectos",
-            "en": "Projects"
-        },
-        "filters": ["all", "JavaScript", "C#", "Docker", "Linux"],
-        "items": [
-            {
-                "id": "homelab",
-                "initials": "HL",
-                "icon": "/img/projects/homelab.svg",
-                "name": "Homelab",
-                "category": {
-                    "es": "Infraestructura · Linux",
-                    "en": "Infrastructure · Linux"
-                },
-                "tags": ["Linux", "Ubuntu Server", "Docker"],
-                "desc": {
-                    "es": "Administracion de servidor personal (practica de manejo de servidores linux).",
-                    "en": "Personal server administration — hands-on practice running Linux servers."
-                },
-                "repo": "https://github.com/axelroman-dev/homelab-stacks",
-                "url": null
-            },
-            {
-                "id": "browsersync",
-                "initials": "BS",
-                "icon": "/img/projects/browsersync.svg",
-                "name": "BrowserSync",
-                "category": {
-                    "es": "Extensión · Self-hosted",
-                    "en": "Extension · Self-hosted"
-                },
-                "tags": ["JavaScript", "Docker", "Self-hosted"],
-                "desc": {
-                    "es": "Extension para navegadores chromium y una imagen de docker para levantar un servidor para la extension que es self-hosted.",
-                    "en": "Extension for chromium browsers plus a docker image that spins up the self-hosted server the extension talks to."
-                },
-                "repo": "https://github.com/axelroman-dev/BrowserSync",
-                "url": "https://browsersync.axelroman.dev/"
-            },
-            {
-                "id": "finanzaspersonales",
-                "initials": "FP",
-                "icon": "/img/projects/finanzaspersonales.svg",
-                "name": "Finanzas Personales",
-                "category": {
-                    "es": "Web · Finanzas personales",
-                    "en": "Web · Personal finances"
-                },
-                "tags": ["TypeScript", "Next.js", "React", "Web"],
-                "desc": {
-                    "es": "Aplicacion web para gestionar las finanzas personales.",
-                    "en": "Web application to manage personal finances."
-                },
-                "repo": "https://github.com/axelroman-dev/FinanzasPersonales",
-                "url": null
-            }
-        ]
-    },
-    "experience": {
-        "kicker": {
-            "es": "Experiencia",
-            "en": "Experience"
-        },
-        "title": {
-            "es": "Trayectoria",
-            "en": "Track record"
-        },
-        "items": [
-            {
-                "year": {
-                    "es": "Jun 2023 – Actualidad",
-                    "en": "Jun 2023 – Present"
-                },
-                "role": {
-                    "es": "Analista de soporte técnico TI",
-                    "en": "IT Support Analyst"
-                },
-                "where": {
-                    "es": "Kalte Logistik",
-                    "en": "Kalte Logistik"
-                },
-                "summary": {
-                    "es": "Desarrollo y mantenimiento de los sistemas que sostienen la operación logística, además del soporte a la infraestructura TI.",
-                    "en": "Building and maintaining the systems behind the logistics operation, plus support for the IT infrastructure."
-                },
-                "highlights": {
-                    "es": [
-                        "Diseño e implementación de un sistema de control de evidencias para transportistas: captura de fotos, firma digital y validación de documentos, integrando el cliente móvil con la API corporativa existente.",
-                        "Módulo de verificación GPS en tiempo real que valida coordenadas y marcas de tiempo para garantizar la integridad y autenticidad de cada operación logística.",
-                        "Nuevos endpoints en la API C# (ASP.NET) para extender el sistema corporativo, manteniendo compatibilidad con el sistema legado.",
-                        "Microservicio independiente para desacoplar procesos pesados del servidor Java/Tomcat, mejorando el rendimiento y la escalabilidad.",
-                        "Administración y optimización del sistema web Java/Tomcat; gestión de incidencias y soporte a infraestructura mediante sistema de tickets."
-                    ],
-                    "en": [
-                        "Designed and built an evidence-control system for carriers: photo capture, digital signature and document validation, integrating the mobile client with the existing corporate API.",
-                        "Real-time GPS verification module that validates coordinates and timestamps to guarantee the integrity and authenticity of every logistics operation.",
-                        "New endpoints in the C# (ASP.NET) API to extend the corporate system while staying compatible with the legacy system.",
-                        "Standalone microservice that offloads heavy processes from the Java/Tomcat server, improving performance and scalability.",
-                        "Administered and optimized the Java/Tomcat web system; handled incidents and infrastructure support through a ticketing system."
-                    ]
-                },
-                "tags": ["C#", "ASP.NET", "Java", "Tomcat", "Microservicios", "GPS"]
-            },
-            {
-                "year": {
-                    "es": "Jun 2021 – Ene 2024",
-                    "en": "Jun 2021 – Jan 2024"
-                },
-                "role": {
-                    "es": "Desarrollador de software Full-Stack",
-                    "en": "Full-Stack Software Developer"
-                },
-                "where": {
-                    "es": "NetRabbit SA de CV",
-                    "en": "NetRabbit SA de CV"
-                },
-                "summary": {
-                    "es": "Desarrollo y liderazgo técnico de sistemas en tiempo real para transporte y restaurantes, de la arquitectura a producción.",
-                    "en": "Development and technical leadership of real-time systems for transport and restaurants, from architecture to production."
-                },
-                "highlights": {
-                    "es": [
-                        "Sistema de gestión de transporte para taxistas en Cuajimalpa: localización en tiempo real, asignación de viajes y control de disponibilidad, con Firebase como backend reactivo.",
-                        "Sistema de inventario para restaurantes: registro de productos, control de stock y reportes, con sincronización en tiempo real y acceso desde dispositivos móviles.",
-                        "Firebase (Firestore y Authentication) como backend en tiempo real: seguridad de datos, reglas de acceso y sincronización entre clientes.",
-                        "Liderazgo técnico del equipo en ambos proyectos: definición de arquitectura, distribución de tareas, revisiones de código y coordinación hasta producción.",
-                        "APIs REST con NestJS y PostgreSQL: diseño de esquemas, migraciones, endpoints y documentación para clientes front-end y móvil.",
-                        "Pipelines CI/CD con GitHub Actions e integración de pagos con Stripe."
-                    ],
-                    "en": [
-                        "Transport management system for taxi drivers in Cuajimalpa: real-time location, trip assignment and availability control, with Firebase as a reactive backend.",
-                        "Inventory system for restaurants: product registry, stock control and reports, with real-time sync and access from mobile devices.",
-                        "Firebase (Firestore and Authentication) as a real-time backend: data security, access rules and client synchronization.",
-                        "Technical lead of the team on both projects: architecture, task distribution, code reviews and coordination through to production.",
-                        "REST APIs with NestJS and PostgreSQL: schema design, migrations, endpoints and documentation for front-end and mobile clients.",
-                        "CI/CD pipelines with GitHub Actions and Stripe payment integration."
-                    ]
-                },
-                "tags": ["NestJS", "PostgreSQL", "Firebase", "Flutter", "GitHub Actions", "Stripe"]
-            }
-        ]
-    },
-    "contact": {
-        "kicker": {
-            "es": "Contacto",
-            "en": "Contact"
-        },
-        "title": {
-            "es": "Hablemos de tu proyecto",
-            "en": "Let's talk about your project"
-        },
-        "body": {
-            "es": "Cuéntame qué necesitas construir. Responderé lo antes posible.",
-            "en": "Tell me what you need to build. I reply as soon as possible."
-        },
-        "email": "hello@axelroman.dev"
-    },
-    "footer": {
-        "tagline": {
-            "es": "Ingeniero en Sistemas · Desarrollador Fullstack",
-            "en": "Systems Engineer · Fullstack Developer"
-        }
-    },
-    "nav": {
-        "es": { "projects": "Proyectos", "stack": "Stack", "contact": "Contacto" },
-        "en": { "projects": "Work", "stack": "Stack", "contact": "Contact" }
-    },
-    "ui": {
-        "all": { "es": "Todo", "en": "All" },
-        "ctaWork": { "es": "Ver proyectos", "en": "See projects" },
-        "ctaHire": { "es": "Contactarme", "en": "Get in touch" },
-        "statYears": { "es": "Años programando", "en": "Years coding" },
-        "statProjects": { "es": "Proyectos", "en": "Own projects" },
-        "statLangs": { "es": "Lenguajes", "en": "Languages" },
-        "repo": { "es": "Repositorio", "en": "Repository" },
-        "web": { "es": "Ver sitio", "en": "Visit site" },
-        "fName": { "es": "Nombre", "en": "Name" },
-        "fNamePh": { "es": "Tu nombre", "en": "Your name" },
-        "fEmail": { "es": "Email", "en": "Email" },
-        "fEmailPh": { "es": "tu@correo.com", "en": "you@email.com" },
-        "fSubject": { "es": "Asunto", "en": "Subject" },
-        "fSubjectPh": { "es": "¿De qué se trata?", "en": "What is it about?" },
-        "fMessage": { "es": "Mensaje", "en": "Message" },
-        "fMessagePh": {
-            "es": "Describe el proyecto, el alcance y las fechas.",
-            "en": "Describe the project, scope and timeline."
-        },
-        "fSend": { "es": "Enviar mensaje", "en": "Send message" },
-        "sent": { "es": "Mensaje enviado. ¡Gracias!", "en": "Message sent. Thanks!" },
-        "sending": { "es": "Enviando…", "en": "Sending…" },
-        "error": {
-            "es": "No se pudo enviar. Intenta de nuevo.",
-            "en": "Could not send. Please try again."
-        }
+    "email": "hello@axelroman.dev"
+  },
+  "footer": {
+    "tagline": {
+      "es": "Ingeniero en Sistemas · Desarrollador Fullstack",
+      "en": "Systems Engineer · Fullstack Developer"
     }
+  },
+  "nav": {
+    "es": {
+      "projects": "Proyectos",
+      "stack": "Stack",
+      "contact": "Contacto"
+    },
+    "en": {
+      "projects": "Work",
+      "stack": "Stack",
+      "contact": "Contact"
+    }
+  },
+  "ui": {
+    "all": {
+      "es": "Todo",
+      "en": "All"
+    },
+    "ctaWork": {
+      "es": "Ver proyectos",
+      "en": "See projects"
+    },
+    "ctaHire": {
+      "es": "Contactarme",
+      "en": "Get in touch"
+    },
+    "statYears": {
+      "es": "Años programando",
+      "en": "Years coding"
+    },
+    "statProjects": {
+      "es": "Proyectos",
+      "en": "Own projects"
+    },
+    "statLangs": {
+      "es": "Lenguajes",
+      "en": "Languages"
+    },
+    "fName": {
+      "es": "Nombre",
+      "en": "Name"
+    },
+    "fNamePh": {
+      "es": "Tu nombre",
+      "en": "Your name"
+    },
+    "fEmail": {
+      "es": "Email",
+      "en": "Email"
+    },
+    "fEmailPh": {
+      "es": "tu@correo.com",
+      "en": "you@email.com"
+    },
+    "fSubject": {
+      "es": "Asunto",
+      "en": "Subject"
+    },
+    "fSubjectPh": {
+      "es": "¿De qué se trata?",
+      "en": "What is it about?"
+    },
+    "fMessage": {
+      "es": "Mensaje",
+      "en": "Message"
+    },
+    "fMessagePh": {
+      "es": "Describe el proyecto, el alcance y las fechas.",
+      "en": "Describe the project, scope and timeline."
+    },
+    "fSend": {
+      "es": "Enviar mensaje",
+      "en": "Send message"
+    },
+    "sent": {
+      "es": "Mensaje enviado. ¡Gracias!",
+      "en": "Message sent. Thanks!"
+    },
+    "sending": {
+      "es": "Enviando…",
+      "en": "Sending…"
+    },
+    "error": {
+      "es": "No se pudo enviar. Intenta de nuevo.",
+      "en": "Could not send. Please try again."
+    }
+  }
 }

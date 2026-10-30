@@ -63,93 +63,97 @@ const ui = data.ui;
                     data-id={p.id}
                     data-tags={p.tags.join("|")}
                 >
-                    {cover && (
-                        <button
-                            type="button"
-                            class="project-shot"
-                            data-gallery-open={p.id}
-                            aria-label={`Ver capturas de ${p.name}`}
-                            data-i18n-attr="aria-label:shots"
-                            data-i18n-aria-label-es={`Ver capturas de ${p.name}`}
-                            data-i18n-aria-label-en={`View screenshots of ${p.name}`}
-                        >
-                            <Image
-                                src={cover.image}
-                                alt=""
-                                widths={[400, 640, 960]}
-                                sizes="(min-width: 1060px) 33vw, (min-width: 700px) 50vw, 100vw"
-                                loading="lazy"
-                            />
-                            {shots.length > 1 && (
-                                <span class="project-shot-count">+{shots.length - 1}</span>
-                            )}
-                        </button>
-                    )}
-                    {cover && (
-                        <template data-gallery-src={p.id}>
-                            {shots.map((s) => (
-                                <Image
-                                    src={s.image}
-                                    alt={s.alt.es}
-                                    data-alt-es={s.alt.es}
-                                    data-alt-en={s.alt.en}
-                                    widths={[800, 1280, 1920]}
-                                    sizes="(min-width: 1240px) 1200px, 100vw"
-                                    loading="eager"
-                                />
-                            ))}
-                        </template>
-                    )}
-                    <div class="project-head">
-                        {publicFileExists(p.icon) ? (
-                            <div class={p.iconFill ? "project-icon fill" : "project-icon"}>
-                                <img src={p.icon} alt="" width="66" height="66" loading="lazy" />
-                            </div>
-                        ) : p.initials?.trim() ? (
-                            <div class="project-initials">{p.initials.trim()}</div>
-                        ) : null}
-                        <div class="project-meta">
-                            <div class="project-name">{p.name}</div>
-                            <div
-                                class="project-category"
-                                data-i18n={`project.${p.id}.category`}
-                                data-i18n-es={p.category.es}
-                                data-i18n-en={p.category.en}
+                    <div class="project-inner">
+                        {cover && (
+                            <button
+                                type="button"
+                                class="project-shot"
+                                data-gallery-open={p.id}
+                                aria-label={`Ver capturas de ${p.name}`}
+                                data-i18n-attr="aria-label:shots"
+                                data-i18n-aria-label-es={`Ver capturas de ${p.name}`}
+                                data-i18n-aria-label-en={`View screenshots of ${p.name}`}
                             >
-                                {p.category.es}
-                            </div>
-                            <div class="project-tags">
-                                {p.tags.map((tag) => (
-                                    <span class="project-tag">{tag}</span>
+                                <Image
+                                    src={cover.image}
+                                    alt=""
+                                    widths={[400, 640, 960, 1280, 1600]}
+                                    sizes="auto, (min-width: 1060px) 700px, (min-width: 700px) 50vw, 100vw"
+                                    loading="lazy"
+                                />
+                                {shots.length > 1 && (
+                                    <span class="project-shot-count">+{shots.length - 1}</span>
+                                )}
+                            </button>
+                        )}
+                        {cover && (
+                            <template data-gallery-src={p.id}>
+                                {shots.map((s) => (
+                                    <Image
+                                        src={s.image}
+                                        alt={s.alt.es}
+                                        data-alt-es={s.alt.es}
+                                        data-alt-en={s.alt.en}
+                                        widths={[800, 1280, 1920]}
+                                        sizes="(min-width: 1240px) 1200px, 100vw"
+                                        loading="eager"
+                                    />
                                 ))}
+                            </template>
+                        )}
+                        <div class="project-content">
+                            <div class="project-head">
+                                {publicFileExists(p.icon) ? (
+                                    <div class={p.iconFill ? "project-icon fill" : "project-icon"}>
+                                        <img src={p.icon} alt="" width="66" height="66" loading="lazy" />
+                                    </div>
+                                ) : p.initials?.trim() ? (
+                                    <div class="project-initials">{p.initials.trim()}</div>
+                                ) : null}
+                                <div class="project-meta">
+                                    <div class="project-name">{p.name}</div>
+                                    <div
+                                        class="project-category"
+                                        data-i18n={`project.${p.id}.category`}
+                                        data-i18n-es={p.category.es}
+                                        data-i18n-en={p.category.en}
+                                    >
+                                        {p.category.es}
+                                    </div>
+                                    <div class="project-tags">
+                                        {p.tags.map((tag) => (
+                                            <span class="project-tag">{tag}</span>
+                                        ))}
+                                    </div>
+                                </div>
                             </div>
+                            <p
+                                class="project-desc"
+                                data-i18n={`project.${p.id}.desc`}
+                                data-i18n-es={p.desc.es}
+                                data-i18n-en={p.desc.en}
+                            >
+                                {p.desc.es}
+                            </p>
+                            {links.length > 0 && (
+                                <div class="project-links">
+                                    {links.map((l, i) => (
+                                        <a
+                                            class="project-link"
+                                            href={l.href}
+                                            target={l.external ? "_blank" : undefined}
+                                            rel={l.external ? "noopener noreferrer" : undefined}
+                                            data-i18n={`project.${p.id}.link${i}`}
+                                            data-i18n-es={l.label.es}
+                                            data-i18n-en={l.label.en}
+                                        >
+                                            {l.label.es}
+                                        </a>
+                                    ))}
+                                </div>
+                            )}
                         </div>
                     </div>
-                    <p
-                        class="project-desc"
-                        data-i18n={`project.${p.id}.desc`}
-                        data-i18n-es={p.desc.es}
-                        data-i18n-en={p.desc.en}
-                    >
-                        {p.desc.es}
-                    </p>
-                    {links.length > 0 && (
-                        <div class="project-links">
-                            {links.map((l, i) => (
-                                <a
-                                    class="project-link"
-                                    href={l.href}
-                                    target={l.external ? "_blank" : undefined}
-                                    rel={l.external ? "noopener noreferrer" : undefined}
-                                    data-i18n={`project.${p.id}.link${i}`}
-                                    data-i18n-es={l.label.es}
-                                    data-i18n-en={l.label.en}
-                                >
-                                    {l.label.es}
-                                </a>
-                            ))}
-                        </div>
-                    )}
                 </article>
             );
         })}

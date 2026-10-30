@@ -76,7 +76,6 @@ export interface ProjectItem {
 export interface Projects {
     kicker: Localized;
     title: Localized;
-    filters: string[];
     items: ProjectItem[];
 }
 
@@ -118,7 +117,6 @@ export interface Nav {
 }
 
 export type UiKey =
-    | "all"
     | "ctaWork"
     | "ctaHire"
     | "statYears"

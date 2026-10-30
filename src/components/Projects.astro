@@ -7,7 +7,6 @@ interface Props {
 }
 const { data } = Astro.props;
 const proj = data.projects;
-const ui = data.ui;
 ---
 
 <section id="proyectos" aria-label="Proyectos">
@@ -30,18 +29,6 @@ const ui = data.ui;
                 {proj.title.es}
             </h2>
         </div>
-        <div class="filters" role="group" aria-label="Filtros por tecnología">
-            {proj.filters.map((f, i) => (
-                <button
-                    type="button"
-                    class={`filter-btn${i === 0 ? " active" : ""}`}
-                    data-filter={f}
-                    aria-pressed={i === 0 ? "true" : "false"}
-                >
-                    {f === "all" ? ui.all.es : f}
-                </button>
-            ))}
-        </div>
     </div>
 
     <div class="projects-grid">
@@ -61,7 +48,6 @@ const ui = data.ui;
                     class="project-card"
                     data-project
                     data-id={p.id}
-                    data-tags={p.tags.join("|")}
                 >
                     <div class="project-inner">
                         {cover && (
@@ -157,15 +143,6 @@ const ui = data.ui;
                 </article>
             );
         })}
-        <div
-            class="empty projects-empty"
-            style="display: none;"
-            data-i18n="empty"
-            data-i18n-es="Sin proyectos para este filtro."
-            data-i18n-en="No projects for this filter."
-        >
-            Sin proyectos para este filtro.
-        </div>
     </div>
 
     <dialog class="gallery" data-gallery aria-label="Capturas del proyecto">

@@ -112,7 +112,6 @@
       "es": "Proyectos",
       "en": "Projects"
     },
-    "filters": ["all", "JavaScript", "C#", "Docker", "Linux"],
     "items": [
       {
         "id": "homelab",
@@ -216,7 +215,7 @@
           "es": "Web · Finanzas personales",
           "en": "Web · Personal finances"
         },
-        "tags": ["TypeScript", "Next.js", "React", "Web"],
+        "tags": ["TypeScript", "Next.js"],
         "desc": {
           "es": "Aplicacion web para gestionar las finanzas personales.",
           "en": "Web application to manage personal finances."
@@ -377,10 +376,6 @@
     }
   },
   "ui": {
-    "all": {
-      "es": "Todo",
-      "en": "All"
-    },
     "ctaWork": {
       "es": "Ver proyectos",
       "en": "See projects"

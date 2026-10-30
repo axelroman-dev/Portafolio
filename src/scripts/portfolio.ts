@@ -1,5 +1,5 @@
 // Client-side state for the portfolio: language switch, theme switch,
-// project filters, screenshot gallery and contact form. All content is driven by
+// screenshot gallery and contact form. All content is driven by
 // data attributes on the rendered HTML — the JSON is the single source
 // of truth on the server.
 
@@ -85,29 +85,6 @@ function setupLang() {
     });
     // Apply current lang on first load so labels are in sync.
     setLang(getLang());
-}
-
-function setupFilters() {
-    const buttons = $$("[data-filter]");
-    const cards = $$("[data-project]");
-    buttons.forEach((btn) => {
-        btn.addEventListener("click", () => {
-            const f = btn.getAttribute("data-filter") || "all";
-            buttons.forEach((b) => b.classList.toggle("active", b === btn));
-            cards.forEach((card) => {
-                const tags = (card.getAttribute("data-tags") || "").split("|").filter(Boolean);
-                const show = f === "all" || tags.includes(f);
-                card.style.display = show ? "" : "none";
-            });
-            // Empty state if nothing matches.
-            const grid = $(".projects-grid");
-            const empty = $(".projects-empty");
-            if (grid && empty) {
-                const anyVisible = cards.some((c) => c.style.display !== "none");
-                empty.style.display = anyVisible ? "none" : "";
-            }
-        });
-    });
 }
 
 function setupContactForm() {
@@ -283,7 +260,6 @@ function setupGallery() {
 export function initPortfolio() {
     setupTheme();
     setupLang();
-    setupFilters();
     setupGallery();
     setupContactForm();
     setupTweaksPanel();

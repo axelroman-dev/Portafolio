@@ -124,8 +124,8 @@
         },
         "tags": ["Linux", "Proxmox", "Docker", "Cloudflared", "Nginx"],
         "desc": {
-          "es": "Administracion de servidor personal (practica de manejo de servidores linux).",
-          "en": "Personal server administration — hands-on practice running Linux servers."
+          "es": "Administración de un homelab personal con Proxmox, donde gestiono apps personales y despliegues de mis proyectos con GitHub Actions. Acceso remoto con Cloudflare Tunnel, Tailscale VPN y SSH, backups y administración de servidores Linux.",
+          "en": "Running a personal Proxmox homelab where I host personal apps and deploy my projects with GitHub Actions. Remote access through Cloudflare Tunnel, Tailscale VPN and SSH, plus backups and Linux server administration."
         },
         "screenshots": [
           {
@@ -133,15 +133,7 @@
             "alt": { "es": "", "en": "" }
           }
         ],
-        "links": [
-          {
-            "label": {
-              "es": "Github",
-              "en": "Github"
-            },
-            "href": "https://github.com/axelroman-dev/homelab-stacks"
-          }
-        ]
+        "links": []
       },
       {
         "id": "browsersync",
@@ -154,8 +146,8 @@
         },
         "tags": ["JavaScript", "Docker", "Self-hosted"],
         "desc": {
-          "es": "Extension para navegadores chromium / mozilla y una imagen de docker para levantar un servidor para la extension que es self-hosted.",
-          "en": "Extension for chromium browsers plus a docker image that spins up the self-hosted server the extension talks to."
+          "es": "Extensión para Chrome y Firefox que sincroniza marcadores, contraseñas, historial y extensiones, todo cifrado, con un servidor self-hosted que se levanta con una imagen de Docker.",
+          "en": "Chrome and Firefox extension that syncs bookmarks, passwords, history and extensions, all encrypted, with a self-hosted server you spin up from a Docker image."
         },
         "screenshots": [
           {
@@ -217,8 +209,8 @@
         },
         "tags": ["TypeScript", "Next.js"],
         "desc": {
-          "es": "Aplicacion web para gestionar las finanzas personales.",
-          "en": "Web application to manage personal finances."
+          "es": "Aplicación web de finanzas personales enfocada en conocer mi balance real: lo que realmente tengo una vez descontadas las deudas. Incluye cuentas de débito y crédito, movimientos, categorías, suscripciones y reportes.",
+          "en": "Personal finance web app focused on knowing my real balance: what I actually have once debts are subtracted. Includes debit and credit accounts, transactions, categories, subscriptions and reports."
         },
         "screenshots": [
           {

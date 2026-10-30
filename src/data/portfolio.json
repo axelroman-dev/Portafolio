@@ -12,11 +12,11 @@
       "en": "Systems Engineer · Fullstack"
     },
     "role": {
-      "es": "Ingniero en Sistema y Desarrollador FullStack",
+      "es": "Ingeniero en Sistemas y Desarrollador FullStack",
       "en": "Systems Engineer and Fullstack Developer"
     },
     "tagline": {
-      "es": "Contruyo cada proyecto como mi meta personal",
+      "es": "Construyo cada proyecto como una meta personal",
       "en": "I build every project as a personal goal"
     }
   },
@@ -130,7 +130,10 @@
         "screenshots": [
           {
             "src": "homelab/proxmox.png",
-            "alt": { "es": "", "en": "" }
+            "alt": {
+              "es": "Panel de Proxmox con las máquinas virtuales y contenedores del homelab",
+              "en": "Proxmox dashboard with the homelab's virtual machines and containers"
+            }
           }
         ],
         "links": []
@@ -152,26 +155,35 @@
         "screenshots": [
           {
             "src": "browsersync/01-sync.png",
-            "alt": { "es": "", "en": "" }
+            "alt": {
+              "es": "Pantalla de sincronización de BrowserSync",
+              "en": "BrowserSync sync screen"
+            }
           },
           {
             "src": "browsersync/02-passwords.png",
-            "alt": { "es": "", "en": "" }
+            "alt": {
+              "es": "Gestor de contraseñas de BrowserSync",
+              "en": "BrowserSync password manager"
+            }
           },
           {
             "src": "browsersync/03-generator.png",
-            "alt": { "es": "", "en": "" }
+            "alt": {
+              "es": "Generador de contraseñas de BrowserSync",
+              "en": "BrowserSync password generator"
+            }
           },
           {
             "src": "browsersync/04-settings.png",
-            "alt": { "es": "", "en": "" }
+            "alt": { "es": "Configuración de BrowserSync", "en": "BrowserSync settings" }
           }
         ],
         "links": [
           {
             "label": {
-              "es": "Github",
-              "en": "Github"
+              "es": "GitHub",
+              "en": "GitHub"
             },
             "href": "https://github.com/axelroman-dev/BrowserSync"
           },
@@ -215,38 +227,61 @@
         "screenshots": [
           {
             "src": "finanzaspersonales/01-dashboard.png",
-            "alt": { "es": "", "en": "" }
+            "alt": {
+              "es": "Dashboard de Finanzas Personales con el balance real",
+              "en": "Finanzas Personales dashboard showing the real balance"
+            }
           },
           {
             "src": "finanzaspersonales/02-cuentas.png",
-            "alt": { "es": "", "en": "" }
+            "alt": { "es": "Cuentas de débito y crédito", "en": "Debit and credit accounts" }
           },
           {
             "src": "finanzaspersonales/03-movimientos.png",
-            "alt": { "es": "", "en": "" }
+            "alt": { "es": "Lista de movimientos", "en": "Transaction list" }
           },
           {
             "src": "finanzaspersonales/04-categorias.png",
-            "alt": { "es": "", "en": "" }
+            "alt": {
+              "es": "Categorías de gastos e ingresos",
+              "en": "Expense and income categories"
+            }
           },
           {
             "src": "finanzaspersonales/05-suscripciones.png",
-            "alt": { "es": "", "en": "" }
+            "alt": { "es": "Suscripciones recurrentes", "en": "Recurring subscriptions" }
           },
           {
             "src": "finanzaspersonales/06-reportes.png",
-            "alt": { "es": "", "en": "" }
+            "alt": { "es": "Reportes de finanzas", "en": "Finance reports" }
           }
         ],
         "links": [
           {
             "label": {
-              "es": "Github",
-              "en": "Github"
+              "es": "GitHub",
+              "en": "GitHub"
             },
             "href": "https://github.com/axelroman-dev/FinanzasPersonales"
           }
         ]
+      },
+      {
+        "id": "clinicadental",
+        "initials": "CD",
+        "icon": null,
+        "name": "Clínica Dental",
+        "category": {
+          "es": "Web · Proyecto de tesis",
+          "en": "Web · Thesis project"
+        },
+        "tags": ["Node.js", "MySQL", "AWS EC2"],
+        "desc": {
+          "es": "Sistema de gestión de pacientes desarrollado como proyecto de tesis (2021 – 2022), con historial clínico, agenda de citas y recordatorios de tratamiento, pensado para usuarios no técnicos. API REST en Node.js con MySQL, desplegada en AWS EC2.",
+          "en": "Patient management system built as my thesis project (2021 – 2022), with clinical history, appointment scheduling and treatment reminders, designed for non-technical users. Node.js REST API with MySQL, deployed on AWS EC2."
+        },
+        "screenshots": [],
+        "links": []
       }
     ]
   },
@@ -279,21 +314,23 @@
         },
         "highlights": {
           "es": [
-            "Diseño e implementación de un sistema de control de evidencias para transportistas: captura de fotos, firma digital y validación de documentos, integrando el cliente móvil con la API corporativa existente.",
-            "Módulo de verificación GPS en tiempo real que valida coordenadas y marcas de tiempo para garantizar la integridad y autenticidad de cada operación logística.",
-            "Nuevos endpoints en la API C# (ASP.NET) para extender el sistema corporativo, manteniendo compatibilidad con el sistema legado.",
-            "Microservicio independiente para desacoplar procesos pesados del servidor Java/Tomcat, mejorando el rendimiento y la escalabilidad.",
-            "Administración y optimización del sistema web Java/Tomcat; gestión de incidencias y soporte a infraestructura mediante sistema de tickets."
+            "- Desarrollo de una aplicación móvil en Flutter para operadores y transportistas que permite subir las evidencias de sus guías de entrega, con geolocalización por coordenadas, escáner de documentos y generación de reportes.",
+            "- Diseño e implementación de un sistema de control de evidencias para transportistas: captura de fotos, firma digital y validación de documentos, integrando el cliente móvil con la API corporativa existente.",
+            "- Módulo de verificación GPS en tiempo real que valida coordenadas y marcas de tiempo para garantizar la integridad y autenticidad de cada operación logística.",
+            "- Nuevos endpoints en la API C# (ASP.NET) para extender el sistema corporativo, manteniendo compatibilidad con el sistema legado.",
+            "- Microservicio independiente para desacoplar procesos pesados del servidor Java/Tomcat, mejorando el rendimiento y la escalabilidad.",
+            "- Administración y optimización del sistema web Java/Tomcat; gestión de incidencias y soporte a infraestructura mediante sistema de tickets."
           ],
           "en": [
-            "Designed and built an evidence-control system for carriers: photo capture, digital signature and document validation, integrating the mobile client with the existing corporate API.",
-            "Real-time GPS verification module that validates coordinates and timestamps to guarantee the integrity and authenticity of every logistics operation.",
-            "New endpoints in the C# (ASP.NET) API to extend the corporate system while staying compatible with the legacy system.",
-            "Standalone microservice that offloads heavy processes from the Java/Tomcat server, improving performance and scalability.",
-            "Administered and optimized the Java/Tomcat web system; handled incidents and infrastructure support through a ticketing system."
+            "- Built a Flutter mobile app for operators and carriers to upload proof-of-delivery evidence for their delivery notes, with coordinate-based geolocation, a document scanner and reporting.",
+            "- Designed and built an evidence-control system for carriers: photo capture, digital signature and document validation, integrating the mobile client with the existing corporate API.",
+            "- Real-time GPS verification module that validates coordinates and timestamps to guarantee the integrity and authenticity of every logistics operation.",
+            "- New endpoints in the C# (ASP.NET) API to extend the corporate system while staying compatible with the legacy system.",
+            "- Standalone microservice that offloads heavy processes from the Java/Tomcat server, improving performance and scalability.",
+            "- Administered and optimized the Java/Tomcat web system; handled incidents and infrastructure support through a ticketing system."
           ]
         },
-        "tags": ["C#", "ASP.NET", "Java", "Tomcat", "Microservicios", "GPS"]
+        "tags": ["Flutter", "C#", "ASP.NET", "Java", "Tomcat", "Microservicios", "GPS"]
       },
       {
         "year": {
@@ -301,8 +338,8 @@
           "en": "Jun 2021 – Jan 2024"
         },
         "role": {
-          "es": "Desarrollador de software Full-Stack",
-          "en": "Full-Stack Software Developer"
+          "es": "Desarrollador de aplicaciones moviles",
+          "en": "Mobile Application Developer"
         },
         "where": {
           "es": "NetRabbit SA de CV",
@@ -314,20 +351,20 @@
         },
         "highlights": {
           "es": [
-            "Sistema de gestión de transporte para taxistas en Cuajimalpa: localización en tiempo real, asignación de viajes y control de disponibilidad, con Firebase como backend reactivo.",
-            "Sistema de inventario para restaurantes: registro de productos, control de stock y reportes, con sincronización en tiempo real y acceso desde dispositivos móviles.",
-            "Firebase (Firestore y Authentication) como backend en tiempo real: seguridad de datos, reglas de acceso y sincronización entre clientes.",
-            "Liderazgo técnico del equipo en ambos proyectos: definición de arquitectura, distribución de tareas, revisiones de código y coordinación hasta producción.",
-            "APIs REST con NestJS y PostgreSQL: diseño de esquemas, migraciones, endpoints y documentación para clientes front-end y móvil.",
-            "Pipelines CI/CD con GitHub Actions e integración de pagos con Stripe."
+            "- Sistema de gestión de transporte para taxistas en Cuajimalpa: localización en tiempo real, asignación de viajes y control de disponibilidad, con Firebase como backend reactivo.",
+            "- Sistema de inventario para restaurantes: registro de productos, control de stock y reportes, con sincronización en tiempo real y acceso desde dispositivos móviles.",
+            "- Firebase (Firestore y Authentication) como backend en tiempo real: seguridad de datos, reglas de acceso y sincronización entre clientes.",
+            "- Liderazgo técnico del equipo en ambos proyectos: definición de arquitectura, distribución de tareas, revisiones de código y coordinación hasta producción.",
+            "- APIs REST con NestJS y PostgreSQL: diseño de esquemas, migraciones, endpoints y documentación para clientes front-end y-  móvil.",
+            "- Pipelines CI/CD con GitHub Actions e integración de pagos con Stripe."
           ],
           "en": [
-            "Transport management system for taxi drivers in Cuajimalpa: real-time location, trip assignment and availability control, with Firebase as a reactive backend.",
-            "Inventory system for restaurants: product registry, stock control and reports, with real-time sync and access from mobile devices.",
-            "Firebase (Firestore and Authentication) as a real-time backend: data security, access rules and client synchronization.",
-            "Technical lead of the team on both projects: architecture, task distribution, code reviews and coordination through to production.",
-            "REST APIs with NestJS and PostgreSQL: schema design, migrations, endpoints and documentation for front-end and mobile clients.",
-            "CI/CD pipelines with GitHub Actions and Stripe payment integration."
+            "- Transport management system for taxi drivers in Cuajimalpa: real-time location, trip assignment and availability control, with Firebase as a reactive backend.",
+            "- Inventory system for restaurants: product registry, stock control and reports, with real-time sync and access from mobile devices.",
+            "- Firebase (Firestore and Authentication) as a real-time backend: data security, access rules and client synchronization.",
+            "- Technical lead of the team on both projects: architecture, task distribution, code reviews and coordination through to production.",
+            "- REST APIs with NestJS and PostgreSQL: schema design, migrations, endpoints and documentation for front-end and mobile clients.",
+            "- CI/CD pipelines with GitHub Actions and Stripe payment integration."
           ]
         },
         "tags": ["NestJS", "PostgreSQL", "Firebase", "Flutter", "GitHub Actions", "Stripe"]
@@ -375,6 +412,10 @@
     "ctaHire": {
       "es": "Contactarme",
       "en": "Get in touch"
+    },
+    "ctaCv": {
+      "es": "Descargar CV",
+      "en": "Download CV"
     },
     "statYears": {
       "es": "Años programando",

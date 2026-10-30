@@ -119,6 +119,7 @@ export interface Nav {
 export type UiKey =
     | "ctaWork"
     | "ctaHire"
+    | "ctaCv"
     | "statYears"
     | "statProjects"
     | "statLangs"

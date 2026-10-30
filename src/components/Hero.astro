@@ -8,6 +8,8 @@ const { data } = Astro.props;
 const p = data.profile;
 const ui = data.ui;
 const photo = publicFileExists(p.photo) ? p.photo : null;
+const cv = data.links.items.find((item) => item.id === "cv");
+const cvHref = cv && publicFileExists(cv.href) ? cv.href : null;
 ---
 
 <section class={photo ? "hero has-photo" : "hero"} id="top" aria-label="Hero">
@@ -48,7 +50,19 @@ const photo = publicFileExists(p.photo) ? p.photo : null;
             >
                 {ui.ctaWork.es}
             </a>
-            <a
+            {cvHref && (
+                <a
+                    href={cvHref}
+                    class="btn btn-secondary"
+                    download
+                    data-i18n="ui.ctaCv"
+                    data-i18n-es={ui.ctaCv.es}
+                    data-i18n-en={ui.ctaCv.en}
+                >
+                    {ui.ctaCv.es}
+                </a>
+            )}
+            {/* <a
                 href="#contacto"
                 class="btn btn-secondary"
                 data-i18n="ui.ctaHire"
@@ -56,7 +70,7 @@ const photo = publicFileExists(p.photo) ? p.photo : null;
                 data-i18n-en={ui.ctaHire.en}
             >
                 {ui.ctaHire.es}
-            </a>
+            </a> */}
         </div>
     </div>
     {photo && (

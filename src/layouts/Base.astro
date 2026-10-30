@@ -8,8 +8,10 @@ interface Props {
 
 const {
     title = "Axel Roman · Ingeniero en Sistemas y Desarrollador FullStack",
-    description = "Portafolio de Axel Roman — Ingeniero en Sistemas y Desarrollador FullStack.",
+    description = "Portafolio de Axel Roman — Ingeniero en Sistemas y Desarrollador FullStack. Proyectos en Java, C#, Flutter y JavaScript, e infraestructura self-hosted en Linux.",
 } = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const ogImage = new URL("/img/profile.jpg", Astro.site);
 ---
 
 <!doctype html>
@@ -21,8 +23,22 @@ const {
         <meta name="generator" content={Astro.generator} />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800&display=swap"
+        />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <title>{title}</title>
+        <link rel="canonical" href={canonical} />
+        <meta property="og:url" content={canonical} />
+        <meta property="og:image" content={ogImage} />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:locale" content="es_MX" />
+        <meta property="og:locale:alternate" content="en_US" />
+        <meta name="twitter:card" content="summary" />
+        <meta name="theme-color" content="#10913f" />
         <script is:inline>
             // Apply persisted theme before paint to avoid flash.
             (function () {

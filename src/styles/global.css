@@ -23,6 +23,13 @@
     --space-4: 16px;
     --space-6: 24px;
     --space-8: 32px;
+
+    /* Text scale: 12px minimum, one step per level. */
+    --fs-xs: 12px;
+    --fs-sm: 13px;
+    --fs-md: 14px;
+    --fs-lg: 15px;
+    --fs-base: 16px;
 }
 
 :root[data-theme="dark"] {
@@ -44,7 +51,7 @@ html {
 
 body {
     margin: 0;
-    font-size: 15px;
+    font-size: var(--fs-base);
     line-height: 1.55;
     font-weight: 400;
     font-family: var(--font-body);
@@ -147,7 +154,7 @@ a {
 }
 
 .kicker {
-    font-size: 10px;
+    font-size: var(--fs-xs);
     letter-spacing: 0.14em;
     text-transform: uppercase;
     color: var(--color-accent);
@@ -163,7 +170,7 @@ a {
     text-decoration: none;
     font-family: var(--font-heading);
     font-weight: var(--font-heading-weight);
-    font-size: 14px;
+    font-size: var(--fs-lg);
     line-height: 1.2;
     color: var(--color-text);
     background: transparent;
@@ -210,16 +217,16 @@ a {
 }
 .field > label {
     display: block;
-    font-size: 12px;
+    font-size: var(--fs-sm);
     margin-bottom: 5px;
-    opacity: 0.7;
+    opacity: 0.8;
 }
 .input {
     width: 100%;
     min-height: 36px;
     padding: 6px 10px;
     font: inherit;
-    font-size: 14px;
+    font-size: var(--fs-lg);
     color: var(--color-text);
     caret-color: var(--color-accent);
     background: var(--color-bg);
@@ -291,9 +298,9 @@ textarea.input {
 }
 .hero-tagline {
     margin: 0;
-    font-size: 15px;
+    font-size: var(--fs-base);
     max-width: 42ch;
-    opacity: 0.75;
+    opacity: 0.85;
     text-wrap: pretty;
 }
 .hero-ctas {
@@ -325,10 +332,10 @@ textarea.input {
     letter-spacing: -0.04em;
 }
 .stat-label {
-    font-size: 11px;
+    font-size: var(--fs-xs);
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    opacity: 0.6;
+    opacity: 0.75;
 }
 
 /* About + Links */
@@ -352,8 +359,8 @@ textarea.input {
 }
 .about p {
     margin: 0 0 10px;
-    font-size: 15px;
-    opacity: 0.8;
+    font-size: var(--fs-base);
+    opacity: 0.9;
     max-width: 56ch;
     text-wrap: pretty;
 }
@@ -382,7 +389,7 @@ textarea.input {
     text-decoration: none;
     font-family: var(--font-heading);
     font-weight: 800;
-    font-size: 15px;
+    font-size: var(--fs-base);
 }
 .link-row:last-child {
     border-bottom: 0;
@@ -391,8 +398,8 @@ textarea.input {
     color: var(--color-accent);
 }
 .link-row .meta {
-    font-size: 12px;
-    opacity: 0.5;
+    font-size: var(--fs-sm);
+    opacity: 0.7;
     font-weight: 400;
 }
 
@@ -411,7 +418,7 @@ textarea.input {
 .stack-title {
     font-family: var(--font-heading);
     font-weight: 800;
-    font-size: 13px;
+    font-size: var(--fs-md);
     letter-spacing: 0.02em;
     padding-bottom: 10px;
     border-bottom: 2px solid var(--color-divider);
@@ -423,7 +430,7 @@ textarea.input {
     gap: 6px;
 }
 .stack-chip {
-    font-size: 12px;
+    font-size: var(--fs-sm);
     padding: 4px 9px;
     border: 1px solid var(--color-divider);
 }
@@ -514,7 +521,7 @@ textarea.input {
     color: var(--color-bg);
     font-family: var(--font-heading);
     font-weight: 800;
-    font-size: 12px;
+    font-size: var(--fs-sm);
 }
 
 .gallery {
@@ -534,8 +541,8 @@ textarea.input {
     justify-content: space-between;
     align-items: center;
     padding: 10px 12px 10px 18px;
-    font-size: 13px;
-    opacity: 0.8;
+    font-size: var(--fs-md);
+    opacity: 0.9;
 }
 .gallery-stage {
     position: relative;
@@ -558,8 +565,8 @@ textarea.input {
 }
 .gallery-caption {
     margin-top: 10px;
-    font-size: 14px;
-    opacity: 0.8;
+    font-size: var(--fs-lg);
+    opacity: 0.9;
     text-align: center;
 }
 .gallery-btn {
@@ -654,10 +661,10 @@ textarea.input {
     line-height: 1.1;
 }
 .project-category {
-    font-size: 11px;
+    font-size: var(--fs-xs);
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    opacity: 0.55;
+    opacity: 0.7;
     margin-top: 5px;
 }
 .project-tags {
@@ -667,7 +674,7 @@ textarea.input {
     margin-top: 10px;
 }
 .project-tag {
-    font-size: 11px;
+    font-size: var(--fs-xs);
     padding: 3px 8px;
     background: var(--color-accent-100);
     color: var(--color-accent-800);
@@ -675,8 +682,8 @@ textarea.input {
 .project-desc {
     margin: 0;
     padding: 0 22px 18px;
-    font-size: 14px;
-    opacity: 0.8;
+    font-size: var(--fs-lg);
+    opacity: 0.9;
     flex: 1;
     text-wrap: pretty;
 }
@@ -697,7 +704,7 @@ textarea.input {
     color: var(--color-text);
     font-family: var(--font-heading);
     font-weight: 800;
-    font-size: 12px;
+    font-size: var(--fs-sm);
     letter-spacing: 0.04em;
     text-transform: uppercase;
     text-decoration: none;
@@ -708,7 +715,7 @@ textarea.input {
 }
 .project-link::after {
     content: "↗";
-    font-size: 12px;
+    font-size: var(--fs-sm);
     line-height: 1;
 }
 .project-link:hover {
@@ -752,7 +759,7 @@ textarea.input {
 .exp-year {
     font-family: var(--font-heading);
     font-weight: 800;
-    font-size: 14px;
+    font-size: var(--fs-lg);
     padding-top: 3px;
 }
 .exp-role {
@@ -763,7 +770,7 @@ textarea.input {
     margin: 0;
 }
 .exp-where {
-    font-size: 11px;
+    font-size: var(--fs-xs);
     letter-spacing: 0.1em;
     text-transform: uppercase;
     color: var(--color-accent);
@@ -772,15 +779,15 @@ textarea.input {
 }
 .exp-summary {
     margin: 12px 0 0;
-    font-size: 14px;
-    opacity: 0.85;
+    font-size: var(--fs-lg);
+    opacity: 0.9;
     text-wrap: pretty;
 }
 .exp-highlights {
     margin: 10px 0 0;
     padding-left: 18px;
-    font-size: 14px;
-    opacity: 0.8;
+    font-size: var(--fs-lg);
+    opacity: 0.9;
 }
 .exp-highlights li {
     margin-top: 4px;
@@ -826,7 +833,7 @@ textarea.input {
 }
 .contact-body {
     margin: 0;
-    font-size: 15px;
+    font-size: var(--fs-base);
     max-width: 34ch;
     text-wrap: pretty;
 }
@@ -836,7 +843,7 @@ textarea.input {
     border-top: 2px solid rgba(255, 255, 255, 0.45);
     font-family: var(--font-heading);
     font-weight: 800;
-    font-size: 14px;
+    font-size: var(--fs-lg);
     word-break: break-all;
     color: #fff;
 }
@@ -864,11 +871,11 @@ textarea.input {
     gap: 12px;
 }
 .sent-msg {
-    font-size: 13px;
+    font-size: var(--fs-md);
     color: var(--color-accent-700);
 }
 .form-status {
-    font-size: 13px;
+    font-size: var(--fs-md);
     font-weight: 500;
 }
 .form-error {
@@ -898,8 +905,8 @@ textarea.input {
     flex-wrap: wrap;
     gap: 12px;
     align-items: center;
-    font-size: 12px;
-    opacity: 0.6;
+    font-size: var(--fs-sm);
+    opacity: 0.75;
 }
 .footer-inner .copy {
     margin-right: auto;
@@ -998,7 +1005,7 @@ textarea.input {
     gap: 6px;
     font-family: var(--font-heading);
     font-weight: 800;
-    font-size: 13px;
+    font-size: var(--fs-md);
     letter-spacing: 0.04em;
     padding: 9px 12px;
     background: transparent;
